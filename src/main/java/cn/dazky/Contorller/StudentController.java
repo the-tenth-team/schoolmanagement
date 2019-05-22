@@ -4,7 +4,6 @@ import cn.dazky.pojo.Student;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +22,6 @@ public class StudentController {
         students.add(new Student("钟久荣","201700005692"));
         students.add(new Student("陈志可","201700005693"));
         model.addAttribute("students",students);
-        return "getData";
+        return "demo/getData";
     }
 }
