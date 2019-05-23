@@ -18,6 +18,7 @@ public class StudentInfoServiceImpl implements StudentInfoService {
     StudentInfoMapper studentInfoMapper;
     @Override
     public List<StudentInfo> getAllStudent(){
+        System.out.println("mapper"+studentInfoMapper);
         return studentInfoMapper.selectByExample(null);
     }
 }
