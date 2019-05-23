@@ -1,5 +1,5 @@
 .index-head {
-	background: #090723;
+	background: #528B8B;
 	color: #ccc;
 	height: 35px;
 	width: auto;
@@ -11,7 +11,7 @@
 
 #index-middle {
 	height: 350px;
-	background: url(/img/index.jpg) no-repeat top;
+	background: url(../../img/index.jpg) no-repeat top;
 	width: auto;
 }
 
@@ -37,6 +37,12 @@
 }
 
 #user-icon {
+	position: relative;
+	top: 28px;
+	left: 5px;
+}
+
+#password-icon {
 	position: relative;
 	top: 28px;
 	left: 5px;
@@ -79,7 +85,7 @@
 
 .index-bottom {
 	text-align: center;
-	background: #000000;
+	background: #53868B;
 	color: #AAAAAA;
 	position: fixed;
 	bottom: 0;
@@ -91,4 +97,12 @@
 
 #index-forgetpw {
 	margin-top: -5px;
+}
+
+#index-news-title-div{
+	height: 685px;
+}
+
+#idnex-news-kit{
+
 }

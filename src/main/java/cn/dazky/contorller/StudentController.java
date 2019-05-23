@@ -29,4 +29,8 @@ public class StudentController {
     public String Default(){
         return "index";
     }
+    @RequestMapping("index-news")
+    public String Index(){
+        return "index-news";
+    }
 }

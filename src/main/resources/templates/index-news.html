@@ -1,15 +1,14 @@
 <!DOCTYPE html>
-<html>
-
+<html xmlns:th="http://www.thymeleaf.org">
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
-		<script type="text/javascript" src="../static/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
-		<link rel="stylesheet" href="../static/bootstrap-3.3.7-dist/css/bootstrap.css" />
-		<link rel="stylesheet" href="../static/bootstrap-3.3.7-dist/css/index.css" />
-		<link rel="stylesheet" href="../static/bootstrap-3.3.7-dist/css/index-news.css" />
-		<script type="text/javascript" src="../static/bootstrap-3.3.7-dist/js/jquery-1.7.2.min.js"></script>
-		<script type="text/javascript" src="../static/bootstrap-3.3.7-dist/js/index.js"></script>
+		<title>XXX新闻</title>
+		<script type="text/javascript" th:src="@{/bootstrap-3.3.7-dist/js/bootstrap.js}" ></script>
+		<script type="text/javascript" th:src="@{/bootstrap-3.3.7-dist/js/jquery-1.7.2.min.js}" ></script>
+		<link rel="stylesheet" th:href="@{/bootstrap-3.3.7-dist/css/bootstrap.css}" />
+		<link rel="stylesheet" th:href="@{/bootstrap-3.3.7-dist/css/index.css}" />
+		<link rel="stylesheet" th:href="@{/bootstrap-3.3.7-dist/css/slide-unlock.css}" />
+		<script type="text/javascript" th:src="@{/bootstrap-3.3.7-dist/js/index.js}"></script>
 
 	</head>
 
@@ -63,11 +62,11 @@
 				<p style="text-indent:2em;">
 					<br />
 				</p>
-				<br><br><br><br><br><br><br>
-				<br><br><br><br><br><br><br><br><br>
-				<div class="index-news-kit col-md-12 col-xs-12">
+
+				<div class="index-news-kit col-md-3 col-xs-3">
 					<a href="#">上一篇:校运动会</a>
-					<a href="#" onclick="historyback()">返回</a>
+				</div>
+				<div class="index-news-kit col-md-3 col-md-offset-6 col-xs-3">
 					<a href="#">下一篇:端午节</a>
 				</div>
 			</div>
