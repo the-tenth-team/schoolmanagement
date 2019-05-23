@@ -1,0 +1,94 @@
+.index-head {
+	background: #090723;
+	color: #ccc;
+	height: 35px;
+	width: auto;
+}
+
+.index-head div {
+	line-height: 35px;
+}
+
+#index-middle {
+	height: 350px;
+	background: url(/img/index.jpg) no-repeat top;
+	width: auto;
+}
+
+#index-login-div {
+	background: #FFFFFF;
+	width: 400px;
+	height: 300px;
+}
+
+#login-font {
+	font-family: "微软雅黑";
+	font-size: 25px;
+	color: #286090;
+	margin-top: 10px;
+}
+
+#index-bottom {
+	width: auto;
+}
+
+#login-form-div {
+	margin-top: 30px;
+}
+
+#user-icon {
+	position: relative;
+	top: 28px;
+	left: 5px;
+}
+
+#index-username {
+	padding-left: 23px;
+}
+
+#index-password {
+	padding-left: 23px;
+}
+
+#idnex-news-div {
+	height: 250px;
+}
+
+#index-new-announcement {
+	font-family: "微软雅黑";
+	font-size: 20px;
+}
+
+#index-news div ul li {
+	list-style: none;
+	margin-top: 20px;
+}
+
+.news-title {
+	width: 150px;
+	display: block;
+	overflow: hidden;
+	word-break: keep-all;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+#news-title-div {
+	text-align: center;
+}
+
+.index-bottom {
+	text-align: center;
+	background: #000000;
+	color: #AAAAAA;
+	position: fixed;
+	bottom: 0;
+}
+
+#index-new-more {
+	color: #286090;
+}
+
+#index-forgetpw {
+	margin-top: -5px;
+}

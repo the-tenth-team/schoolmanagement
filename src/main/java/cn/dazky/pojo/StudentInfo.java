@@ -1,6 +1,8 @@
 package cn.dazky.pojo;
 
-public class StudentInfo {
+import java.io.Serializable;
+
+public class StudentInfo implements Serializable {
     private Integer studentId;
 
     private Integer staffId;

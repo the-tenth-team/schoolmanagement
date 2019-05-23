@@ -25,4 +25,8 @@ public class StudentController {
         model.addAttribute("students",students);
         return "demo/getData";
     }
+    @RequestMapping("/")
+    public String Default(){
+        return "index";
+    }
 }

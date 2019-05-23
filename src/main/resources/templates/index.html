@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script type="text/javascript" th:src="@{/bootstrap-3.3.7-dist/js/bootstrap.js}" ></script>
+		<script type="text/javascript" th:src="@{/bootstrap-3.3.7-dist/js/jquery-1.7.2.min.js}" ></script>
+		<link rel="stylesheet" th:href="@{/bootstrap-3.3.7-dist/css/bootstrap.css}" />
+		<link rel="stylesheet" th:href="@{/bootstrap-3.3.7-dist/css/index.css}" />
+		<link rel="stylesheet" th:href="@{/bootstrap-3.3.7-dist/css/slide-unlock.css}" />
+		<script type="text/javascript" th:src="@{/bootstrap-3.3.7-dist/js/jquery.slideunlock.js}"></script>
+		<script type="text/javascript" th:src="@{/bootstrap-3.3.7-dist/js/index.js}"></script>
+	</head>
+
+	<body>
+		<div class="index-head">
+			<div class="col-md-2 col-md-offset-10 col-xs-3 col-xs-offset-9">
+				【设为首页】【加入收藏】
+			</div>
+		</div>
+		<div id="index-main">
+			<div id="index-middle">
+				<div class="col-md-7 col-md-offset-5 col-xs-7 col-xs-offset-5">XXX教务管理系统</div>
+				<div class="col-md-5 col-md-offset-7">
+					<div id="index-login-div" class="panel panel-default col-md-5 col-md-offset-2 col-xs-5 col-xs-offset-7">
+						<div id="login-font" class="col-md-5 col-md-offset-1 col-xs-5 col-xs-offset-1">
+							欢迎登录
+						</div>
+						<div id="login-form-div" class="col-md-5 col-md-offset-2 col-xs-5 col-xs-offset-2">
+							<form action="#" class="form-horizontal ">
+								<div class="form-group" style="margin-top: -30px;">
+									<div style="width: 300px;">
+										<span class="glyphicon glyphicon-user" aria-hidden="true" id="user-icon"></span>
+										<input type="text" class="form-control fc-clear" id="index-username" placeholder="请输入您的账号">
+									</div>
+								</div>
+								<div class="form-group" style="margin-top: -20px;">
+									<div style="width: 300px;">
+										<span class="glyphicon glyphicon-lock" aria-hidden="true" id="user-icon"></span>
+										<input type="password" class="form-control" id="index-password" placeholder="请输入您的密码">
+									</div>
+								</div>
+								<div class="form-group" style="display: inline-block;">
+									<div style="width: 300px;">
+										<div id="slider">
+											<div id="slider_bg"></div>
+											<span id="label">>></span> <span id="labelTip">拖动滑块验证</span>
+										</div>
+										<script>
+											$(function() {
+												var slider = new SliderUnlock("#slider", {
+													successLabelTip: "验证成功"
+												}, function() {
+													alert("验证成功");
+												});
+												slider.init();
+											})
+										</script>
+									</div>
+								</div>
+								<div class="form-group">
+									<div style="width: 300px;">
+										<input type="submit" class="btn btn-primary btn-lg btn-block" value="登录" />
+									</div>
+								</div>
+							</form>
+						</div>
+						<div class="col-md-8 col-md-offset-4 col-xs-8 col-xs-offset-4" id="index-forgetpw">
+							<a href="#">忘记密码</a> / <a href="#">学生登录</a> / <a href="#">资料下载</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="idnex-news-div" class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1 panel panel-default">
+				<div class="col-md-1" id="index-new-announcement">
+					公告
+				</div>
+				<div class="col-md-1 col-md-offset-10 col-xs-2 col-xs-offset-10">
+					<a href="index-news-title.html" id="index-new-more">更多>></a>
+				</div>
+				<div class="col-md-12 col-xs-12" id="index-news">
+					<div class="col-md-3 col-xs-3">
+						<ul>
+							<li class="news-li">
+								<a href="#" onclick="news(id)" class="news-title" title="新闻12121aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa">新闻12121aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a>
+							</li>
+							<li class="news-li">
+								<a href="#" class="news-title">新闻2qweqw</a>
+							</li>
+							<li class="news-li">
+								<a href="#" class="news-title">新闻3asdq</a>
+							</li>
+							<li class="news-li">
+								<a href="#" class="news-title">新闻4</a>
+							</li>
+						</ul>
+					</div>
+					<div class="col-md-3 col-xs-3" style="border-right: solid;">
+						<ul>
+							<li>
+								<li><span>时间</span></li>
+							</li>
+							<li><span>时间</span></li>
+							<li><span>时间</span></li>
+							<li><span>时间</span></li>
+						</ul>
+					</div>
+					<div class="col-md-3 col-xs-3">
+						<ul>
+							<li class="news-li">
+								<a href="#" class="news-title">新闻1asda</a>
+							</li>
+							<li class="news-li">
+								<a href="#" class="news-title">新闻2asd</a>
+							</li>
+							<li class="news-li">
+								<a href="#" class="news-title">新闻3wqe</a>
+							</li>
+							<li class="news-li">
+								<a href="#" class="news-title">新闻4qweqw</a>
+							</li>
+						</ul>
+					</div>
+					<div class="col-md-3 col-xs-3">
+						<ul>
+							<li><span>2018-12-12</span></li>
+							<li><span>时间</span></li>
+							<li><span>时间</span></li>
+							<li><span>时间</span></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="index-bottom col-md-12 col-xs-12">
+			学校地址：XXX 邮编：000000 电话0000-0000000 <br> 版权归XXX所有
+		</div>
+	</body>
+
+</html>
