@@ -29,8 +29,24 @@ public class StudentController {
     public String Default(){
         return "index";
     }
-    @RequestMapping("index-news")
-    public String Index(){
-        return "index-news";
+    @RequestMapping("/index1")
+    public String Index1(){
+        return "index/index-forgetpwd-first";
+    }
+    @RequestMapping("/index2")
+    public String Index2(){
+        return "index/index-forgetpwd-second";
+    }
+    @RequestMapping("/index3")
+    public String Index3(){
+        return "index/index-forgetpwd-third";
+    }
+    @RequestMapping("/index4")
+    public String Index4(){
+        return "index/index-forgetpwd-fourth";
+    }
+    @RequestMapping("/index5")
+    public String Index5(){
+        return "index";
     }
 }

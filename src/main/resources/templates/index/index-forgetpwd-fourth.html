@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" th:src="@{/bootstrap-3.3.7-dist/js/bootstrap.js}"></script>
+    <link rel="stylesheet" th:href="@{/bootstrap-3.3.7-dist/css/bootstrap.css}"/>
+    <link rel="stylesheet" th:href="@{/bootstrap-3.3.7-dist/css/index.css}"/>
+    <title>密码重置</title>
+</head>
+<body>
+<div class="index-head">
+    <div class="col-md-2 col-md-offset-10 col-xs-3 col-xs-offset-9">
+        【设为首页】【加入收藏】
+    </div>
+</div>
+<div class="col-md-12" id="index-password-plan">
+    <div class="col-md-9 col-md-offset-3">
+        <span style="background: url(/img/a.jpg)" class="index-updatepwd-step_ok">1</span>
+        <span style="background: url(/img/f.jpg)" class="index-updatepwd-step_wire_ok"></span>
+        <span style="background: url(/img/a.jpg)" class="index-updatepwd-step_no">2</span>
+        <span style="background: url(/img/f.jpg)" class="index-updatepwd-step_wire_ok"></span>
+        <span style="background: url(/img/a.jpg)" class="index-updatepwd-step_no">3</span>
+        <span style="background: url(/img/f.jpg)" class="index-updatepwd-step_wire_ok"></span>
+        <span style="background: url(/img/a.jpg)" class="index-updatepwd-step_no">4</span>
+    </div>
+    <div class="col-md-9 col-md-offset-3">
+        <span class="index-updatepwd-title">填写账号</span>
+        <span class="index-updatepwd-title">身份验证</span>
+        <span class="index-updatepwd-title">设置新密码</span>
+        <span class="index-updatepwd-title">完成</span>
+    </div>
+</div>
+<div class="col-md-5 col-md-offset-5" style="margin-top: 50px;">
+    <div style="background: url(/img/xiaolianchenggong.jpg);width: 200px;height: 200px;"></div>
+    <div style="margin-top: 30px;margin-left: 60px;font-size: 20px"><a th:href="@{index5}">返回登录</a></div>
+</div>
+
+<div class="index-bottom col-md-12 col-xs-12">
+    学校地址：XXX 邮编：000000 电话0000-0000000 <br> 版权归XXX所有
+</div>
+</body>
+</html>

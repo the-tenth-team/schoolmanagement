@@ -1,5 +1,5 @@
 .index-head {
-    background: #090723;
+    background: #528B8B;
     color: #ccc;
     height: 35px;
     width: auto;
@@ -11,7 +11,7 @@
 
 #index-middle {
     height: 350px;
-    background: url("/img/index.jpg") no-repeat top;
+    background: url(/img/index.jpg) no-repeat top;
     width: auto;
 }
 
@@ -37,6 +37,12 @@
 }
 
 #user-icon {
+    position: relative;
+    top: 28px;
+    left: 5px;
+}
+
+#password-icon {
     position: relative;
     top: 28px;
     left: 5px;
@@ -79,7 +85,7 @@
 
 .index-bottom {
     text-align: center;
-    background: #000000;
+    background: #53868B;
     color: #AAAAAA;
     position: fixed;
     bottom: 0;
@@ -93,17 +99,47 @@
     margin-top: -5px;
 }
 
-#index-password-plan{
-    background: #EBEBEB;
-    height: 100px;
-}
-
 #index-news-title-div{
     height: 685px;
 }
 
-
-.idnex-password-plan-img{
+#index-password-plan{
     height: 100px;
-    width: 100px;
+    background: #ebebeb;
+}
+
+.index-updatepwd-step_ok{
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    line-height: 50px;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 20px;
+}
+
+.index-updatepwd-step_no{
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    line-height: 50px;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 20px;
+}
+
+.index-updatepwd-step_wire_ok{
+    position: relative;
+    top: 20px;
+    width: 150px;
+    height: 50px;
+    display: inline-block;
+}
+
+.index-updatepwd-title{
+    font-family: "微软雅黑";
+    font-weight:bold;
+    display: inline-block;
+    margin-right: 147px;
+    color: #a5a5a5;
 }
