@@ -10,6 +10,9 @@
   </resultMap>
   <resultMap id="ResultMapWithBLOBs" type="cn.dazky.pojo.NoticeInfo" extends="BaseResultMap" >
     <result column="notice_content" property="noticeContent" jdbcType="LONGVARCHAR" />
+    <association property="staffInfo" javaType="cn.dazky.pojo.StaffInfo">
+      <result property="staffName" column="staff_name"></result>
+    </association>
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -75,6 +78,12 @@
   <sql id="Blob_Column_List" >
     notice_content
   </sql>
+
+  <select id="noticeForIndex" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer">
+    select notice_info.*,staff_info.staff_name from staff_info
+    right join notice_info on staff_info.staff_id=notice_info.staff_id
+    where notice_id = #{noticeId,jdbcType=INTEGER}
+  </select>
   <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="cn.dazky.pojo.NoticeInfoExample" >
     select
     <if test="distinct" >

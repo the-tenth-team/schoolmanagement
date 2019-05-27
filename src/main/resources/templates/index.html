@@ -31,7 +31,7 @@
                     <span class="index-login-error-hint"></span>
                 </div>
                 <div id="login-form-div" class="col-md-5 col-md-offset-2 col-xs-5 col-xs-offset-2">
-                    <form class="form-horizontal">
+                    <form class="form-horizontal" action="staff_login">
                         <div class="form-group" style="margin-top: -30px;">
                             <div style="width: 300px;">
                                 <span class="glyphicon glyphicon-user" aria-hidden="true" id="user-icon"></span>
@@ -75,54 +75,34 @@
         </div>
         <div class="col-md-12 col-xs-12" id="index-news">
             <div class="col-md-3 col-xs-3">
-                <ul>
+                <!--显示四条公告记录-->
+                <ul th:each="notice,status:${notices}" th:if="${status.count}<5">
                     <li class="news-li">
-                        <a href="#" onclick="news(id)" class="news-title"
-                           title="新闻12121aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa">新闻12121aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a>
-                    </li>
-                    <li class="news-li">
-                        <a href="#" class="news-title">新闻2qweqw</a>
-                    </li>
-                    <li class="news-li">
-                        <a href="#" class="news-title">新闻3asdq</a>
-                    </li>
-                    <li class="news-li">
-                        <a href="#" class="news-title">新闻4</a>
+                        <a th:href="@{news/viewForNotice/}+${notice.noticeId}" class="news-title"
+                           ><span th:text="${notice.noticeTitle}"></span></a>
                     </li>
                 </ul>
             </div>
             <div class="col-md-3 col-xs-3" style="border-right: solid;">
-                <ul>
+                <ul th:each="notice,status:${notices}" th:if="${status.count}<5">
                     <li>
-                    <li><span>时间</span></li>
-                    </li>
-                    <li><span>时间</span></li>
-                    <li><span>时间</span></li>
-                    <li><span>时间</span></li>
-                </ul>
-            </div>
-            <div class="col-md-3 col-xs-3">
-                <ul>
-                    <li class="news-li">
-                        <a href="#" class="news-title">新闻1asda</a>
-                    </li>
-                    <li class="news-li">
-                        <a href="#" class="news-title">新闻2asd</a>
-                    </li>
-                    <li class="news-li">
-                        <a href="#" class="news-title">新闻3wqe</a>
-                    </li>
-                    <li class="news-li">
-                        <a href="#" class="news-title">新闻4qweqw</a>
+                        <span th:text="${#dates.format(notice.noticeTime,'yyyy-MM-dd')}"></span>
                     </li>
                 </ul>
             </div>
             <div class="col-md-3 col-xs-3">
-                <ul>
-                    <li><span>2018-12-12</span></li>
-                    <li><span>时间</span></li>
-                    <li><span>时间</span></li>
-                    <li><span>时间</span></li>
+                <ul th:each="notice,status:${notices}" th:if="${status.count}<5">
+                    <li class="news-li">
+                        <a href="#" class="news-title"
+                        ><span th:text="${notice.noticeTitle}"></span></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-3 col-xs-3">
+                <ul th:each="notice,status:${notices}" th:if="${status.count}<5">
+                    <li>
+                        <span th:text="${#dates.format(notice.noticeTime,'yyyy-MM-dd')}"></span>
+                    </li>
                 </ul>
             </div>
         </div>

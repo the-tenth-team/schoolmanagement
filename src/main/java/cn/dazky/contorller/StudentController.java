@@ -27,7 +27,8 @@ public class StudentController {
         return "demo/getData";
     }
     @RequestMapping("/")
-    public String Default(){
+    public String Default(Model model){
+        model.addAttribute("notices",studentInfoService.getAllNotice());
         return "index";
     }
     @RequestMapping("/index1")
@@ -54,7 +55,8 @@ public class StudentController {
     @ResponseBody
     public String login(String student_no,String student_password){
         System.out.println(student_no+"==="+student_password);
-        return "aaaaa";
+
+        return "";
     }
 
     @RequestMapping("/judegValiDate")

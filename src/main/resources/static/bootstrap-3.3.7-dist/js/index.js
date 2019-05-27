@@ -48,7 +48,7 @@ $(function () {
          * 失败：返回首页且提示用户
          */
         $.ajax({
-            type: "GET",
+            type: "POST",
             url: "/login",
             data: $("form").serialize(),
             success: function(msg){
