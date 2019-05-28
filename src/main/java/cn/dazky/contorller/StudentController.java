@@ -28,10 +28,13 @@ public class StudentController {
         model.addAttribute("students",students);
         return "demo/getData";
     }
-    @RequestMapping("/index")
-    public String Default(){
+
+    @RequestMapping("/")
+    public String Default(Model model){
+        model.addAttribute("notices",studentInfoService.getAllNotice());
         return "index";
     }
+
     @RequestMapping("/index1")
     public String Index1(){
         return "TheFrontDeskManagement/forgetpwd/index-forgetpwd-first";

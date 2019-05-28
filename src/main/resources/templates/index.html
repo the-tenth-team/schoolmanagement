@@ -79,7 +79,7 @@
                 <ul th:each="notice,status:${notices}" th:if="${status.count}<5">
                     <li class="news-li">
                         <a th:href="@{news/viewForNotice/}+${notice.noticeId}" class="news-title"
-                           ><span th:text="${notice.noticeTitle}"></span></a>
+                           target="_blank"><span th:text="${notice.noticeTitle}"></span></a>
                     </li>
                 </ul>
             </div>
@@ -93,7 +93,7 @@
             <div class="col-md-3 col-xs-3">
                 <ul th:each="notice,status:${notices}" th:if="${status.count}<5">
                     <li class="news-li">
-                        <a href="#" class="news-title"
+                        <a href="#" class="news-title" target="_blank"
                         ><span th:text="${notice.noticeTitle}"></span></a>
                     </li>
                 </ul>
