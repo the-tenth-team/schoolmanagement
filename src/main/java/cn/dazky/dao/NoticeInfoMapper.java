@@ -6,6 +6,8 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 public interface NoticeInfoMapper {
+    NoticeInfo noticeForIndex(Integer noticeId);
+
     int countByExample(NoticeInfoExample example);
 
     int deleteByExample(NoticeInfoExample example);
@@ -15,6 +17,7 @@ public interface NoticeInfoMapper {
     int insert(NoticeInfo record);
 
     int insertSelective(NoticeInfo record);
+
 
     List<NoticeInfo> selectByExampleWithBLOBs(NoticeInfoExample example);
 

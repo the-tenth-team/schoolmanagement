@@ -7,6 +7,8 @@ public class NoticeInfo {
 
     private Integer staffId;
 
+    private StaffInfo staffInfo;
+
     private String noticeTitle;
 
     private Date noticeTime;
@@ -41,6 +43,14 @@ public class NoticeInfo {
 
     public Date getNoticeTime() {
         return noticeTime;
+    }
+
+    public StaffInfo getStaffInfo() {
+        return staffInfo;
+    }
+
+    public void setStaffInfo(StaffInfo staffInfo) {
+        this.staffInfo = staffInfo;
     }
 
     public void setNoticeTime(Date noticeTime) {
