@@ -6,8 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @ClassName StudentManagementController
@@ -21,15 +24,33 @@ public class StudentManagementController {
 
     @Autowired
     CommunicateInfoService communicateInfoService;
+
     /**
-     * 班主任评价
-     * @param model
+     * 跳转至班主任评价页面
      * @return
      */
-    @RequestMapping("/communicateinfo_list")
-    public String findCommunicateInfoAll(Model model) {
+    @RequestMapping("/ToCommunicateInfoList")
+    public String ToCommunicateInfoList() {
+        return "BackgroundManagement/student/communicateinfo/CommunicateInfoList";
+    }
+
+    /**
+     * 班主任评价分页显示
+     * @return
+     */
+    @RequestMapping("/CommunicateInfoList")
+    @ResponseBody
+    public Map<String,Object> findCommunicateInfoAll(){
+        Map<String,Object> map=new HashMap<String,Object>();
         List<CommunicateInfo> communicateInfoAll = communicateInfoService.findCommunicateInfoAll();
-        model.addAttribute("CommunicateInfoList",communicateInfoAll);
-        return "BackgroundManagement/student/communicateinfo/communicateinfo_list";
+/*        System.out.println(communicateInfoAll.get(0).getStudentInfo().getStudentName());
+        System.out.println(communicateInfoAll.get(0).getStaffInfo().getStaffName());*/
+        int countx=communicateInfoAll.size();
+        map.put("code",0);
+        map.put("msg","");
+        map.put("count",countx);
+        map.put("data",communicateInfoAll);
+        //System.out.println(map.toString());
+        return map;
     }
 }

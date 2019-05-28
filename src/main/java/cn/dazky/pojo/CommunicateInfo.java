@@ -23,6 +23,25 @@ public class CommunicateInfo {
 
     private String rewardPunish;
 
+    private StudentInfo studentInfo;
+    private StaffInfo staffInfo;
+
+    public StudentInfo getStudentInfo() {
+        return studentInfo;
+    }
+
+    public void setStudentInfo(StudentInfo studentInfo) {
+        this.studentInfo = studentInfo;
+    }
+
+    public StaffInfo getStaffInfo() {
+        return staffInfo;
+    }
+
+    public void setStaffInfo(StaffInfo staffInfo) {
+        this.staffInfo = staffInfo;
+    }
+
     public Integer getCommunicateId() {
         return communicateId;
     }
@@ -101,5 +120,23 @@ public class CommunicateInfo {
 
     public void setRewardPunish(String rewardPunish) {
         this.rewardPunish = rewardPunish == null ? null : rewardPunish.trim();
+    }
+
+    @Override
+    public String toString() {
+        return "CommunicateInfo{" +
+                "communicateId=" + communicateId +
+                ", studentId=" + studentId +
+                ", staffId=" + staffId +
+                ", communicateTime=" + communicateTime +
+                ", communicateContent='" + communicateContent + '\'' +
+                ", communicateXuenian='" + communicateXuenian + '\'' +
+                ", communicateXueqi='" + communicateXueqi + '\'' +
+                ", leaveCount=" + leaveCount +
+                ", truancyCount=" + truancyCount +
+                ", rewardPunish='" + rewardPunish + '\'' +
+                ", studentInfo=" + studentInfo +
+                ", staffInfo=" + staffInfo +
+                '}';
     }
 }
