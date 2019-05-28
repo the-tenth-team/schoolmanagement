@@ -4,7 +4,6 @@ import cn.dazky.pojo.CommunicateInfo;
 import cn.dazky.service.CommunicateInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -31,7 +30,7 @@ public class StudentManagementController {
      */
     @RequestMapping("/ToCommunicateInfoList")
     public String ToCommunicateInfoList() {
-        return "BackgroundManagement/student/communicateinfo/CommunicateInfoList";
+        return "BackgroundManagement/student/CommunicateInfoList";
     }
 
     /**
