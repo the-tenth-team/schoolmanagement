@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" th:src="@{/bootstrap-3.3.7-dist/js/jquery-3.3.1.min.js}"></script>
+    <script type="text/javascript" th:src="@{/bootstrap-3.3.7-dist/js/bootstrap.js}"></script>
+    <link rel="stylesheet" th:href="@{/bootstrap-3.3.7-dist/css/bootstrap.css}"/>
+    <link rel="stylesheet" th:href="@{/bootstrap-3.3.7-dist/css/front-desk/student_idnex.css}">
+    <script type="text/javascript" th:src="@{/bootstrap-3.3.7-dist/js/front-desk-student.js}"></script>
+</head>
+<body id="right-body">
+    <div id="student-update-div" class="col-md-4 col-md-offset-1">
+        <div id="student-update-div-top">
+            <span>更改密码</span>
+        </div>
+        <div id="student-update-div-main">
+            <form>
+                <div class="form-group" style="width: 300px">
+                    <label for="exampleInputOldPwd">旧密码</label>
+                    <input type="password" name="old_pwd" class="form-control" id="exampleInputOldPwd" placeholder="请您输入旧密码">
+                </div>
+                <div class="form-group" style="width: 300px">
+                    <label for="exampleInputNewPwd">新密码</label>
+                    <input type="password" name="new_pwd" class="form-control" id="exampleInputNewPwd" placeholder="请您输入新密码">
+                </div>
+                <div class="form-group" style="width: 300px">
+                    <label for="exampleInputEnsureNewPwd">确定密码</label>
+                    <input type="password" class="form-control" id="exampleInputEnsureNewPwd" placeholder="请您再次输入新密码">
+                </div>
+                <div class="form-group" style="width: 300px">
+                    <span id="student-update-error">&nbsp;</span>
+                </div>
+                <button type="button" class="btn" id="student-update-button">确定</button>
+            </form>
+        </div>
+    </div>
+
+
+</body>
+</html>

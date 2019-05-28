@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" th:src="@{/bootstrap-3.3.7-dist/js/jquery-3.3.1.min.js}"></script>
+    <script type="text/javascript" th:src="@{/bootstrap-3.3.7-dist/js/bootstrap.js}"></script>
+    <link rel="stylesheet" th:href="@{/bootstrap-3.3.7-dist/css/bootstrap.css}"/>
+    <link rel="stylesheet" th:href="@{/bootstrap-3.3.7-dist/css/front-desk/student_idnex.css}">
+    <script type="text/javascript" th:src="@{/bootstrap-3.3.7-dist/js/front-desk-student.js}"></script>
+</head>
+<body id="right-body">
+<div class="col-md-11 col-md-offset-1" id="student-score-div">
+    <div id="student-score-title">
+        <span >个人缴费</span>
+    </div>
+    <div class="col-md-12" id="find-score">
+        <form>
+            <div class="form-group">
+                <span class="glyphicon glyphicon-search" id="score-search"></span>
+                <input type="text" class="form-control" id="exampleInputScore" placeholder="请您输入搜索内容">
+            </div>
+        </form>
+    </div>
+    <div class="col-md-12 show-score-div">
+        <div class="col-md-2">
+            <img th:src="@{img/pay.png}" style="width: 100px;height: 100px">
+        </div>
+        <div class="col-md-10" style="margin-top: 15px">
+            2017-2018学年 &nbsp;&nbsp;&nbsp; 欠款: 3000.0<br>
+            缴费方式: 微信转账 &nbsp;&nbsp; 应交金额: 5000.0<br>
+            优惠金额: 0.0 &nbsp;&nbsp; 实缴金额: 50000.0<br>
+            缴费时间: 20197-09-05<br>
+            备注: XXXXXXXXX
+        </div>
+    </div>
+    <div class="col-md-12 show-score-div">
+        <div class="col-md-2">
+            <img th:src="@{img/pay.png}" style="width: 100px;height: 100px">
+        </div>
+        <div class="col-md-10" style="margin-top: 15px">
+            2017-2018学年 &nbsp;&nbsp;&nbsp; 欠款: 3000.0<br>
+            缴费方式: 微信转账 &nbsp;&nbsp; 应交金额: 5000.0<br>
+            优惠金额: 0.0 &nbsp;&nbsp; 实缴金额: 50000.0<br>
+            缴费时间: 20197-09-05<br>
+            备注: XXXXXXXXX
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

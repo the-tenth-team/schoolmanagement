@@ -1,23 +1,23 @@
-#index-news-title{
-	font-family: "微软雅黑";
-	font-size: 30px;
-	text-align: center;
-	line-height: 50px;
+#index-news-title {
+    font-family: "微软雅黑";
+    font-size: 30px;
+    text-align: center;
+    line-height: 50px;
 }
 
-#index-news-data{
-	font-family: "微软雅黑";
-	font-size: 17px;
-	text-align: center;
-	color: #aaa;
-	line-height: 35px;
+#index-news-data {
+    font-family: "微软雅黑";
+    font-size: 17px;
+    text-align: center;
+    color: #aaa;
+    line-height: 35px;
 }
 
-#index-news-content{
-	margin-top: 40px;
+#index-news-content {
+    margin-top: 40px;
 }
 
-.index-news-kit{
-	text-align: center;
-	margin-bottom: 80px;
+.index-news-kit {
+    text-align: center;
+    margin-bottom: 80px;
 }

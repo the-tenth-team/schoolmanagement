@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" th:src="@{/bootstrap-3.3.7-dist/js/jquery-3.3.1.min.js}"></script>
+    <script type="text/javascript" th:src="@{/bootstrap-3.3.7-dist/js/bootstrap.js}"></script>
+    <link rel="stylesheet" th:href="@{/bootstrap-3.3.7-dist/css/bootstrap.css}"/>
+    <link rel="stylesheet" th:href="@{/bootstrap-3.3.7-dist/css/front-desk/student_idnex.css}">
+    <script type="text/javascript" th:src="@{/bootstrap-3.3.7-dist/js/front-desk-student.js}"></script>
+</head>
+<body id="right-body">
+<div class="col-md-11 col-md-offset-1" id="student-score-div">
+    <div id="student-score-title">
+        <span>月度评教信息</span>
+    </div>
+    <div class="col-md-12" id="find-score">
+        <form>
+            <div class="form-group">
+                <span class="glyphicon glyphicon-search" id="score-search"></span>
+                <input type="text" class="form-control" id="exampleInputScore" placeholder="请您输入搜索内容">
+            </div>
+        </form>
+    </div>
+    <div class="col-md-12 show-score-div">
+        <div class="col-md-2">
+            <img th:src="@{img/pingjiao.png}" style="width: 100px;height: 100px">
+        </div>
+        <div class="col-md-10" style="margin-top: 15px">
+            学期: 2017-2018学年第一学期 &nbsp;&nbsp; 月份: 2月 &nbsp;&nbsp; 教师: XXX &nbsp;&nbsp; 评价情况: 不满意<br>
+            任教课程: java项目实训 &nbsp;&nbsp; 专业: 软件技术 &nbsp;&nbsp; 班级: 17java班<br>
+            评教时间：2018-05-12 &nbsp;&nbsp; 建议: XXXXXXXXXXXXXXXXXXXXXXXX
+        </div>
+    </div>
+    <div class="col-md-12 show-score-div">
+        <div class="col-md-2">
+            <img th:src="@{img/pingjiao.png}" style="width: 100px;height: 100px">
+        </div>
+        <div class="col-md-10" style="margin-top: 15px">
+            学期: 2017-2018学年第一学期 &nbsp;&nbsp; 月份: 2月 &nbsp;&nbsp; 教师: XXX &nbsp;&nbsp; 评价情况: 不满意<br>
+            任教课程: java项目实训 &nbsp;&nbsp; 专业: 软件技术 &nbsp;&nbsp; 班级: 17java班<br>
+            评教时间：2018-05-12 &nbsp;&nbsp; 建议: XXXXXXXXXXXXXXXXXXXXXXXX
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

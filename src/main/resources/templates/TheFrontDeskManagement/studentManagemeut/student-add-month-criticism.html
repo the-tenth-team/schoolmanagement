@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" th:src="@{/bootstrap-3.3.7-dist/js/jquery-3.3.1.min.js}"></script>
+    <script type="text/javascript" th:src="@{/bootstrap-3.3.7-dist/js/bootstrap.js}"></script>
+    <link rel="stylesheet" th:href="@{/bootstrap-3.3.7-dist/css/bootstrap.css}"/>
+    <link rel="stylesheet" th:href="@{/bootstrap-3.3.7-dist/css/front-desk/student_idnex.css}">
+    <script type="text/javascript" th:src="@{/bootstrap-3.3.7-dist/js/front-desk-student.js}"></script>
+</head>
+<body id="right-body">
+<div class="col-md-11 col-md-offset-1" id="student-score-div">
+    <div id="student-score-title">
+        <span>添加评教信息</span>
+    </div>
+    <div class="col-md-12" id="student-add-month-criticism-div">
+        <form class="form-horizontal">
+            <label for="inputSemester" class="col-md-2 control-label">学期</label>
+            <div class="col-md-4">
+                <select class="form-control" id="inputSemester">
+                    <option>2018-2019 第一学期</option>
+                    <option>2018-2019 第二学期</option>
+                    <option>2017-2018 第二学期</option>
+                </select>
+            </div>
+            <label for="inputMouth" class="col-md-2 control-label">月份</label>
+            <div class="col-md-4">
+                <select class="form-control" id="inputMouth">
+                    <option>1月</option>
+                    <option>2月</option>
+                </select>
+            </div>
+            <label for="inputClass" class="col-md-2 control-label">班级</label>
+            <div class="col-md-4">
+                <select class="form-control" id="inputClass">
+                    <option>17java</option>
+                    <option>17ui</option>
+                </select>
+            </div>
+            <label for="inputMajor" class="col-md-2 control-label">专业</label>
+            <div class="col-md-4">
+                <select class="form-control" id="inputMajor">
+                    <option>软件技术</option>
+                    <option>游戏开发</option>
+                </select>
+            </div>
+            <label for="inputCourse" class="col-md-2 control-label">课程</label>
+            <div class="col-md-4">
+                <select class="form-control" id="inputCourse">
+                    <option>java项目实训</option>
+                    <option>MySQL数据库</option>
+                </select>
+            </div>
+            <label for="inputTeacher" class="col-md-2 control-label">教师姓名</label>
+            <div class="col-md-4">
+                <select class="form-control" id="inputTeacher">
+                    <option>杨哥</option>
+                    <option>XXX</option>
+                </select>
+            </div>
+            <label for="inputEvaluate" class="col-md-2 control-label">评价选项</label>
+            <div class="col-md-4">
+                <select class="form-control" id="inputEvaluate">
+                    <option>满意</option>
+                    <option>一般</option>
+                </select>
+            </div>
+            <div class="col-md-12">
+                <label for="inputEvaluate" class="col-md-2 control-label" style="margin-left: -9px">建议</label>
+                <div class="col-md-10">
+                    <textarea class="form-control" rows="3"></textarea>
+                </div>
+            </div>
+            <div class="col-md-12" style="margin-left: 240px">
+                    <button id="month-criticism-button" type="button" class="btn">确定</button>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,174 @@
+#student-list {
+    text-align: center;
+}
+
+#student-list li {
+    list-style: none;
+    width: 200px;
+    margin: 10px 0;
+    height: 40px;
+}
+
+#student-list li a {
+    line-height: 40px;
+    text-align: center;
+    text-decoration: none;
+    width: 200px;
+    height: 40px;
+    display: inline-block;
+    color: #757d88;
+}
+
+#student-list li:hover {
+    background: #eeeff1;
+}
+
+#left-body {
+    background: #FFFFFF;
+}
+
+#right-body {
+    background: #eeeeee;
+}
+
+#student-update-div {
+    margin-top: 120px;
+    width: 500px;
+    height: 400px;
+    background: #FFFFFF;
+    border-radius: 5px;
+}
+
+#student-update-div-top{
+    margin-top: -30px;
+    margin-left: 20px;
+    width: 500px;
+    height: 60px;
+    background: linear-gradient(to right,#a945bb,#8f1183);
+    border-radius: 5px;
+}
+
+#student-update-div-top span{
+    position: relative;
+    top: 20px;
+    margin-left: 40px;
+    color: #FFFFFF;
+    font-size: 17px;
+
+}
+
+#student-update-div-main{
+    margin-top: 45px;
+    margin-left: 90px;
+}
+
+#student-update-button{
+    margin-top: 10px;
+    width: 300px;
+    background: linear-gradient(to right,#a945bb,#8f1183);
+    color: #FFFFFF
+}
+
+#student-update-error{
+    color: #c9302c;
+}
+
+#student-info-div{
+    margin-top: 120px;
+    width: 800px;
+    height: 400px;
+    background: #FFFFFF;
+    border-radius: 5px;
+    color: purple;
+    font-family: 微软雅黑;
+}
+
+#student-info-name{
+    margin-top: 25px;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.student-info{
+    margin: 5px 0;
+}
+
+#student-info-title{
+    width: 800px;
+    height: 60px;
+    margin-top: -20px;
+    margin-left: 20px;
+    background: linear-gradient(to right,#a945bb,#8f1183);
+    border-radius: 5px;
+    color: #FFFFFF
+}
+
+#student-info-title span{
+    position: relative;
+    top: 15px;
+    left: 35px;
+    font-size: 17px;
+}
+
+#student-score-div{
+    margin-top: 120px;
+    width: 700px;
+    background: #FFFFFF;
+    height: 500px;
+}
+
+#find-score{
+    margin-top: 40px;
+}
+
+#score-search{
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    color: #cccccc;
+}
+
+#exampleInputScore{
+    padding-left: 20px;
+}
+
+.show-score-div{
+    border: purple solid 1px;
+    border-radius: 5px;
+    margin: 2px 0;
+}
+
+#student-score-title{
+    margin-left: 20px;
+    margin-top: -23px;
+    width: 700px;
+    height: 60px;
+    background: linear-gradient(to right,#a945bb,#8f1183);
+    border-radius: 5px;
+}
+
+#student-score-title span{
+    position: relative;
+    top: 15px;
+    left: 35px;
+    color: #FFFFFF;
+    font-size: 17px;
+}
+
+#student-add-month-criticism-div{
+    position: relative;
+    top: 15px;
+    border-radius: 5px;
+    border: solid purple 1px;
+}
+
+#student-add-month-criticism-div div{
+    margin: 5px 0;
+}
+
+#month-criticism-button{
+    width: 130px;
+    background: linear-gradient(to right,#a945bb,#8f1183);
+    color: #FFFFFF;
+}
+

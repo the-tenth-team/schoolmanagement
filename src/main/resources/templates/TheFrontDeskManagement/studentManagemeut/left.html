@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>学生管理的首页</title>
+    <script type="text/javascript" th:src="@{/bootstrap-3.3.7-dist/js/jquery-3.3.1.min.js}"></script>
+    <script type="text/javascript" th:src="@{/bootstrap-3.3.7-dist/js/bootstrap.js}"></script>
+    <link rel="stylesheet" th:href="@{/bootstrap-3.3.7-dist/css/bootstrap.css}"/>
+    <link rel="stylesheet" th:href="@{/bootstrap-3.3.7-dist/css/front-desk/student_idnex.css}">
+    <script type="text/javascript" th:src="@{/bootstrap-3.3.7-dist/js/front-desk-student.js}"></script>
+</head>
+<body id="left-body">
+    <div style="text-align: center;margin: 20px;font-family: 微软雅黑;font-size: 25px">
+        学生信息<br>
+        <hr />
+    </div>
+    <ul  id="student-list">
+        <li ><a th:href="@{right}" target="right">首页</a></li>
+        <li ><a th:href="@{updatePwd}" target="right">修改登录密码</a></li>
+        <li ><a th:href="@{personalInformation}" target="right">查看个人信息</a></li>
+        <li ><a th:href="@{studnetScore}" target="right">查看个人成绩</a></li>
+        <li ><a th:href="@{studentpay}" target="right">查看缴费信息</a></li>
+        <li ><a th:href="@{monthCriticism}" target="right">查看评教信息(月度)</a></li>
+        <li ><a th:href="@{addmonthCriticism}" target="right">添加评教信息(月度)</a></li>
+        <li ><a href="#" target="right">查看评教信息(学期)</a></li>
+        <li ><a href="#" target="right">添加评教信息(学期)</a></li>
+    </ul>
+</body>
+</html>

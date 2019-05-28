@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>学生管理的首页</title>
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/bootstrap-3.3.7-dist/css/front-desk/student_idnex.css}">
 </head>
-<body>
-
-</body>
+<frameset cols="17%,83%">
+    <frame th:src="@{left}" frameborder="no">
+    <frame th:src="@{right}" name="right" frameborder="no">
+</frameset>
 </html>

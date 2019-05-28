@@ -52,7 +52,7 @@ $(function () {
             url: "/login",
             data: $("form").serialize(),
             success: function(msg){
-                if(true){
+                if(msg.state=="100"){
 
                     var slider = new SliderUnlock("#slider", {
                         successLabelTip: "验证成功"

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" th:src="@{/bootstrap-3.3.7-dist/js/jquery-3.3.1.min.js}"></script>
+    <script type="text/javascript" th:src="@{/bootstrap-3.3.7-dist/js/bootstrap.js}"></script>
+    <link rel="stylesheet" th:href="@{/bootstrap-3.3.7-dist/css/bootstrap.css}"/>
+    <link rel="stylesheet" th:href="@{/bootstrap-3.3.7-dist/css/front-desk/student_idnex.css}">
+    <script type="text/javascript" th:src="@{/bootstrap-3.3.7-dist/js/front-desk-student.js}"></script>
+</head>
+<body id="right-body">
+    <div class="col-md-11 col-md-offset-1" id="student-score-div">
+        <div id="student-score-title">
+            <span >个人成绩</span>
+        </div>
+        <div class="col-md-12" id="find-score">
+            <form>
+                <div class="form-group">
+                    <span class="glyphicon glyphicon-search" id="score-search"></span>
+                    <input type="text" class="form-control" id="exampleInputScore" placeholder="请您输入搜索内容">
+                </div>
+            </form>
+        </div>
+        <div class="col-md-12 show-score-div">
+            <div class="col-md-2">
+                <img th:src="@{img/cz-cjdj.png}" style="width: 100px;height: 100px">
+            </div>
+            <div class="col-md-10" style="margin-top: 15px">
+                课程: java项目实训 &nbsp;&nbsp;&nbsp; 成绩: 89<br>
+                学年: 2017-2018学年 &nbsp;&nbsp; 学期: 第一学期<br>
+                登记人: 杨哥 &nbsp;&nbsp; 登记时间: 2018-03-21
+            </div>
+        </div>
+        <div class="col-md-12 show-score-div">
+            <div class="col-md-2">
+                <img th:src="@{img/cz-cjdj.png}" style="width: 100px;height: 100px">
+            </div>
+            <div class="col-md-10" style="margin-top: 15px">
+                课程: java项目实训 &nbsp;&nbsp;&nbsp; 成绩: 89<br>
+                学年: 2017-2018学年 &nbsp;&nbsp; 学期: 第一学期<br>
+                登记人: 杨哥 &nbsp;&nbsp; 登记时间: 2018-03-21
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
