@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>班主任评价</title>
+    <title>期末成绩</title>
     <link rel="stylesheet" href="/static/X-admin/lib/layui/css/layui.css?t=1554901098009"
           th:href="@{/X-admin/lib/layui/css/layui.css(t=1554901098009)}" media="all">
     <style>
@@ -45,7 +45,7 @@
             , slider = layui.slider //滑块
 
         //向世界问个好
-        layer.msg('班主任评价');
+        layer.msg('期末成绩');
 
         //监听Tab切换
         element.on('tab(demo)', function (data) {
@@ -57,43 +57,31 @@
         //执行一个 table 实例
         table.render({
             elem: '#demo'
-            , url: '/CommunicateInfoList' //数据接口
-            , title: '班主任评价表'
+            , url: '/StudentWriteGradeList' //数据接口
+            , title: '期末成绩表'
             , page: true //开启分页
             , toolbar: 'default' //开启工具栏，此处显示默认图标，可以自定义模板，详见文档
             , cols: [
                 [ //表头
                     {type: 'checkbox', fixed: 'left'}
+                    , {field: 'writeGradeXuenian', title: '学年', fixed: 'left', align: 'center', width: 200}
+                    , {field: 'writeGradeXueqi', title: '学期', align: 'center', width: 100}
+                    , {field: 'classId', title: '班级', align: 'center', width: 100}
+                    , {field: 'studentId', title: '学生姓名', align: 'center', width: 150}
+                    , {field: 'disciplineId', title: '课程名', align: 'center', width: 100}
+                    , {field: 'disciplineId', title: '学时', align: 'center', width: 100}
+                    , {field: 'writeGrade', title: '成绩', align: 'center', sort: true, width: 100}
+                    , {field: 'writeGradeType', title: '考试类型', align: 'center', width: 100}
+                    , {field: 'staffId', title: '登分人', align: 'center', width: 200}
                     , {
-                    field: 'studentName',
-                    title: '学生姓名',
-                    fixed: 'left',
+                    field: 'writeGradeTime',
+                    title: '登分日期',
                     align: 'center',
-                    width: 100,
-                    templet: '<div>{{d.studentInfo.studentName}}</div>'
-                }
-                    , {field: 'communicateXuenian', title: '学年', align: 'center', width: 150}
-                    , {field: 'communicateXueqi', title: '学期', align: 'center', width: 100}
-                    , {field: 'communicateContent', title: '品行评语', align: 'center', width: 150}
-                    , {field: 'leaveCount', title: '病事假统计', align: 'center', sort: true, width: 100}
-                    , {field: 'truancyCount', title: '旷课统计', align: 'center', sort: true, width: 100}
-                    , {field: 'rewardPunish', title: '奖惩记载', align: 'center', sort: true, width: 100}
-                    , {
-                    field: 'staffName',
-                    title: '评价人',
-                    align: 'center',
-                    templet: '<div>{{d.staffInfo.staffName}}</div>',
-                    width: 100
-                }
-                    , {
-                    field: 'communicateTime',
-                    title: '评价时间',
-                    align: 'center',
+                    width: 200,
                     sort: true,
-                    templet: "<div>{{layui.util.toDateString(d.communicateTime, 'yyyy-MM-dd HH:mm:ss')}}</div>",
-                    width: 200
+                    templet: "<div>{{layui.util.toDateString(d.writeGradeTime, 'yyyy-MM-dd HH:mm:ss')}}</div>"
                 }
-                    , {fixed: 'right', title: '操作', align: 'center', toolbar: '#barDemo', width: 165}
+                    , {fixed: 'right', title: '操作', align: 'center', width: 165, toolbar: '#barDemo'}
                 ]
             ]
         });
@@ -148,7 +136,7 @@
             elem: 'pageDemo' //分页容器的id
             , count: 100 //总页数
             , skin: '#1E9FFF' //自定义选中色值
-            //,skip: true //开启跳页
+            , skip: true //开启跳页
             , jump: function (obj, first) {
                 if (!first) {
                     layer.msg('第' + obj.curr + '页', {offset: 'b'});

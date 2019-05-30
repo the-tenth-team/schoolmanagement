@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>班主任评价</title>
+    <title>学生信息</title>
     <link rel="stylesheet" href="/static/X-admin/lib/layui/css/layui.css?t=1554901098009"
           th:href="@{/X-admin/lib/layui/css/layui.css(t=1554901098009)}" media="all">
     <style>
@@ -45,7 +45,7 @@
             , slider = layui.slider //滑块
 
         //向世界问个好
-        layer.msg('班主任评价');
+        layer.msg('学生信息');
 
         //监听Tab切换
         element.on('tab(demo)', function (data) {
@@ -57,42 +57,32 @@
         //执行一个 table 实例
         table.render({
             elem: '#demo'
-            , url: '/CommunicateInfoList' //数据接口
-            , title: '班主任评价表'
+            , url: '/StudentInfoList' //数据接口
+            , title: '学生信息表'
             , page: true //开启分页
             , toolbar: 'default' //开启工具栏，此处显示默认图标，可以自定义模板，详见文档
             , cols: [
                 [ //表头
                     {type: 'checkbox', fixed: 'left'}
+                    , {field: 'studentNo', title: '学号', fixed: 'left', align: 'center', width: 200}
+                    , {field: 'studentName', title: '姓名', align: 'center', width: 100}
+                    , {field: 'studentSex', title: '性别', align: 'center', width: 100}
+                    , {field: 'studentBirthday', title: '出生年月', align: 'center', width: 150}
+                    , {field: 'studentTellphone', title: '手机号码', align: 'center', width: 100}
+                    , {field: 'studentQq', title: 'QQ', align: 'center', width: 100}
+                    , {field: 'studentHard', title: '困难生', align: 'center', width: 100}
+                    , {field: 'studentLoan', title: '助学贷款', align: 'center', width: 100}
+                    , {field: 'studentMuster', title: '退伍考学', align: 'center', width: 200}
+                    , {field: 'studentProject', title: '十一工程分', align: 'center', width: 200}
                     , {
-                    field: 'studentName',
-                    title: '学生姓名',
-                    fixed: 'left',
+                    field: 'className',
+                    title: '班级',
                     align: 'center',
-                    width: 100,
-                    templet: '<div>{{d.studentInfo.studentName}}</div>'
-                }
-                    , {field: 'communicateXuenian', title: '学年', align: 'center', width: 150}
-                    , {field: 'communicateXueqi', title: '学期', align: 'center', width: 100}
-                    , {field: 'communicateContent', title: '品行评语', align: 'center', width: 150}
-                    , {field: 'leaveCount', title: '病事假统计', align: 'center', sort: true, width: 100}
-                    , {field: 'truancyCount', title: '旷课统计', align: 'center', sort: true, width: 100}
-                    , {field: 'rewardPunish', title: '奖惩记载', align: 'center', sort: true, width: 100}
-                    , {
-                    field: 'staffName',
-                    title: '评价人',
-                    align: 'center',
-                    templet: '<div>{{d.staffInfo.staffName}}</div>',
-                    width: 100
-                }
-                    , {
-                    field: 'communicateTime',
-                    title: '评价时间',
-                    align: 'center',
-                    sort: true,
-                    templet: "<div>{{layui.util.toDateString(d.communicateTime, 'yyyy-MM-dd HH:mm:ss')}}</div>",
+                    templet: '<div>{{d.classInfo.className}}</div>',
                     width: 200
                 }
+                    , {field: 'studentPro', title: '专业', align: 'center', width: 200}
+                    , {field: 'studentSchool', title: '所在分院', align: 'center', width: 200}
                     , {fixed: 'right', title: '操作', align: 'center', toolbar: '#barDemo', width: 165}
                 ]
             ]
@@ -148,7 +138,7 @@
             elem: 'pageDemo' //分页容器的id
             , count: 100 //总页数
             , skin: '#1E9FFF' //自定义选中色值
-            //,skip: true //开启跳页
+            , skip: true //开启跳页
             , jump: function (obj, first) {
                 if (!first) {
                     layer.msg('第' + obj.curr + '页', {offset: 'b'});

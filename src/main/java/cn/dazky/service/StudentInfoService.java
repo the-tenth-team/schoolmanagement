@@ -12,13 +12,22 @@ import java.util.List;
 public interface StudentInfoService {
     /**
      * 获取所有学生信息
+     *
      * @return
      */
     public List<StudentInfo> getAllStudent();
 
     /**
      * 获取所有公告信息
+     *
      * @return
      */
     public List<NoticeInfo> getAllNotice();
+
+    /**
+     * @description: 学生信息分页
+     * @author Zhike Chen
+     * @date 2019/5/29 21:43
+     */
+    List<StudentInfo> findStudentInfoAll();
 }

@@ -25,6 +25,43 @@ public class StudentWriteGrade {
 
     private String writeGradeType;
 
+    private ClassInfo classInfo;
+    private StudentInfo studentInfo;
+    private DisciplineInfo disciplineInfo;
+    private StaffInfo staffInfo;
+
+    public ClassInfo getClassInfo() {
+        return classInfo;
+    }
+
+    public void setClassInfo(ClassInfo classInfo) {
+        this.classInfo = classInfo;
+    }
+
+    public StudentInfo getStudentInfo() {
+        return studentInfo;
+    }
+
+    public void setStudentInfo(StudentInfo studentInfo) {
+        this.studentInfo = studentInfo;
+    }
+
+    public DisciplineInfo getDisciplineInfo() {
+        return disciplineInfo;
+    }
+
+    public void setDisciplineInfo(DisciplineInfo disciplineInfo) {
+        this.disciplineInfo = disciplineInfo;
+    }
+
+    public StaffInfo getStaffInfo() {
+        return staffInfo;
+    }
+
+    public void setStaffInfo(StaffInfo staffInfo) {
+        this.staffInfo = staffInfo;
+    }
+
     public Integer getWriteGradeId() {
         return writeGradeId;
     }

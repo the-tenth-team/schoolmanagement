@@ -25,20 +25,32 @@ public class StudentInfoServiceImpl implements StudentInfoService {
     @Resource
     NoticeInfoMapper noticeInfoMapper;
     @Autowired
-    RedisTemplate<Object,Object> redisTemplate;
+    RedisTemplate<Object, Object> redisTemplate;
+
     @Override
-    public List<StudentInfo> getAllStudent(){
+    public List<StudentInfo> getAllStudent() {
         redisTemplate.setKeySerializer(new StringRedisSerializer());
-        List students= (List) redisTemplate.opsForValue().get("allStudents");
-        System.out.println("缓存数据"+students);
-        if(students!=null)
+        List students = (List) redisTemplate.opsForValue().get("allStudents");
+        System.out.println("缓存数据" + students);
+        if (students != null)
             return students;
-        System.out.println("mapper"+studentInfoMapper);
-        List<StudentInfo> list=studentInfoMapper.selectByExample(null);
-        redisTemplate.opsForValue().set("allStudents",list);
-        return list;
+        System.out.println("mapper" + studentInfoMapper);
+        List<StudentInfo> list = studentInfoMapper.selectByExample(null);
+        redisTemplate.opsForValue().set("allStudents", list);
+        return studentInfoMapper.selectByExample(null);
     }
-    public List<NoticeInfo> getAllNotice(){
+
+    public List<NoticeInfo> getAllNotice() {
         return noticeInfoMapper.selectByExample(null);
+    }
+
+    /**
+     * @description: 学生信息分页
+     * @author Zhike Chen
+     * @date 2019/5/29 21:42
+     */
+    @Override
+    public List<StudentInfo> findStudentInfoAll() {
+        return studentInfoMapper.selectByExample(null);
     }
 }
