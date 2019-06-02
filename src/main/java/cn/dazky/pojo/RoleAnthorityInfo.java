@@ -7,6 +7,16 @@ public class RoleAnthorityInfo {
 
     private Integer anthortyId;
 
+    private AnthortyInfo anthortyInfo;
+
+    public AnthortyInfo getAnthortyInfo() {
+        return anthortyInfo;
+    }
+
+    public void setAnthortyInfo(AnthortyInfo anthortyInfo) {
+        this.anthortyInfo = anthortyInfo;
+    }
+
     public Integer getRoleAnthorityId() {
         return roleAnthorityId;
     }
@@ -29,5 +39,15 @@ public class RoleAnthorityInfo {
 
     public void setAnthortyId(Integer anthortyId) {
         this.anthortyId = anthortyId;
+    }
+
+    @Override
+    public String toString() {
+        return "RoleAnthorityInfo{" +
+                "roleAnthorityId=" + roleAnthorityId +
+                ", roleId=" + roleId +
+                ", anthortyId=" + anthortyId +
+                ", anthortyInfo=" + anthortyInfo +
+                '}';
     }
 }
