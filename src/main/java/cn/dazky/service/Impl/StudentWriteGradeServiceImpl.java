@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * @ClassName StudentWriteGradeServiceImpl
  * @Description 学生成绩
- * @Auther Google
+ * @Auther Zhike Chen
  * @Date 2019/5/30 10:48
  * @Version 1.0
  */

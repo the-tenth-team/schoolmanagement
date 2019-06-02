@@ -6,7 +6,7 @@ import java.util.List;
 
 /**
  * 考勤管理
- * @author Google
+ * @author Zhike Chen
  * @date 2019/6/2
  **/
 public interface AttendanceInfoService {

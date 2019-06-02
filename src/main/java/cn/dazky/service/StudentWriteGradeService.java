@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * @ClassName StudentWriteGradeService
  * @Description 学生成绩
- * @Auther Google
+ * @Auther Zhike Chen
  * @Date 2019/5/30 10:46
  * @Version 1.0
  */

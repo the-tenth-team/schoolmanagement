@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * @ClassName CommunicateInfoServiceImpl
  * @Description TODO
- * @Auther Google
+ * @Auther Zhike Chen
  * @Date 2019/5/24 19:14
  * @Version 1.0
  */
