@@ -37,7 +37,7 @@ public class StudentManagementController {
      *
      * @return
      */
-    @RequestMapping("/ToCommunicateInfoList")
+    @RequestMapping("/staff/ToCommunicateInfoList")
     public String ToCommunicateInfoList() {
         return "BackgroundManagement/student/CommunicateInfoList";
     }

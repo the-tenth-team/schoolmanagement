@@ -6,6 +6,18 @@
     <result column="role_id" property="roleId" jdbcType="INTEGER" />
     <result column="anthorty_id" property="anthortyId" jdbcType="INTEGER" />
   </resultMap>
+  <resultMap id="WithAnthortyResultMap" type="cn.dazky.pojo.RoleAnthorityInfo">
+    <id column="role_anthority_id" property="roleAnthorityId" jdbcType="INTEGER" />
+    <result column="role_id" property="roleId" jdbcType="INTEGER" />
+    <result column="anthorty_id" property="anthortyId" jdbcType="INTEGER" />
+    <association property="anthortyInfo" javaType="cn.dazky.pojo.AnthortyInfo">
+      <id column="anthorty_id" property="anthortyId" jdbcType="INTEGER" />
+      <result column="anthorty_pid" property="anthortyPid" jdbcType="INTEGER" />
+      <result column="anthorty_name" property="anthortyName" jdbcType="VARCHAR" />
+      <result column="anthorty_desc" property="anthortyDesc" jdbcType="VARCHAR" />
+      <result column="anthorty_url" property="anthortyUrl" jdbcType="VARCHAR" />
+    </association>
+  </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
       <foreach collection="oredCriteria" item="criteria" separator="or" >
@@ -67,6 +79,10 @@
   <sql id="Base_Column_List" >
     role_anthority_id, role_id, anthorty_id
   </sql>
+  <sql id="WithAnthorty_Column_List" >
+    rai.role_anthority_id, rai.role_id, rai.anthorty_id,
+    an.anthorty_id, an.anthorty_pid, an.anthorty_name, an.anthorty_desc, an.anthorty_url
+  </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.dazky.pojo.RoleAnthorityInfoExample" >
     select
     <if test="distinct" >
@@ -86,6 +102,12 @@
     <include refid="Base_Column_List" />
     from role_anthority_info
     where role_anthority_id = #{roleAnthorityId,jdbcType=INTEGER}
+  </select>
+  <select id="selectWithAnthortyByPrimaryKey" resultMap="WithAnthortyResultMap" parameterType="cn.dazky.util.Role" >
+    select
+    <include refid="WithAnthorty_Column_List" />
+    from role_anthority_info rai join anthorty_info an
+    on rai.anthorty_id = an.anthorty_id where rai.role_id = ${role_id} and anthorty_pid = ${anthorty_pid}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from role_anthority_info

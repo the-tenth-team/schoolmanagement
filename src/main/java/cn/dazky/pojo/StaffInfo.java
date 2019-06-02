@@ -1,8 +1,12 @@
 package cn.dazky.pojo;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class StaffInfo {
+public class StaffInfo implements Serializable{
+
+    private static final long serialVersionUID = -1703157541292440129L;
+
     private Integer staffId;
 
     private Integer roleId;

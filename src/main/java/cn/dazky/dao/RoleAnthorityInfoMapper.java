@@ -18,6 +18,8 @@ public interface RoleAnthorityInfoMapper {
 
     List<RoleAnthorityInfo> selectByExample(RoleAnthorityInfoExample example);
 
+    List<RoleAnthorityInfo> selectWithAnthortyByPrimaryKey(Integer role_id,Integer anthorty_pid);
+
     RoleAnthorityInfo selectByPrimaryKey(Integer roleAnthorityId);
 
     int updateByExampleSelective(@Param("record") RoleAnthorityInfo record, @Param("example") RoleAnthorityInfoExample example);

@@ -50,4 +50,15 @@ public class AnthortyInfo {
     public void setAnthortyUrl(String anthortyUrl) {
         this.anthortyUrl = anthortyUrl == null ? null : anthortyUrl.trim();
     }
+
+    @Override
+    public String toString() {
+        return "AnthortyInfo{" +
+                "anthortyId=" + anthortyId +
+                ", anthortyPid=" + anthortyPid +
+                ", anthortyName='" + anthortyName + '\'' +
+                ", anthortyDesc='" + anthortyDesc + '\'' +
+                ", anthortyUrl='" + anthortyUrl + '\'' +
+                '}';
+    }
 }
