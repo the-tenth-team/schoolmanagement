@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>学生信息</title>
+    <title>学生考勤</title>
     <link rel="stylesheet" href="/static/X-admin/lib/layui/css/layui.css?t=1554901098009"
           th:href="@{/X-admin/lib/layui/css/layui.css(t=1554901098009)}" media="all">
     <style>
@@ -45,7 +45,7 @@
             , slider = layui.slider //滑块
 
         //向世界问个好
-        layer.msg('学生信息');
+        layer.msg('学生考勤');
 
         //监听Tab切换
         element.on('tab(demo)', function (data) {
@@ -57,32 +57,28 @@
         //执行一个 table 实例
         table.render({
             elem: '#demo'
-            , url: '/StudentInfoList' //数据接口
-            , title: '学生信息表'
+            , url: '/AttendanceInfoList' //数据接口
+            , title: '学生考勤表'
             , page: true //开启分页
             , toolbar: 'default' //开启工具栏，此处显示默认图标，可以自定义模板，详见文档
             , cols: [
                 [ //表头
                     {type: 'checkbox', fixed: 'left'}
-                    , {field: 'studentNo', title: '学号', fixed: 'left', align: 'center', width: 200}
-                    , {field: 'studentName', title: '姓名', align: 'center', width: 100}
-                    , {field: 'studentSex', title: '性别', align: 'center', width: 100}
-                    , {field: 'studentBirthday', title: '出生年月', align: 'center', width: 150}
-                    , {field: 'studentTellphone', title: '手机号码', align: 'center', width: 100}
-                    , {field: 'studentQq', title: 'QQ', align: 'center', width: 100}
-                    , {field: 'studentHard', title: '困难生', align: 'center', width: 100}
-                    , {field: 'studentLoan', title: '助学贷款', align: 'center', width: 100}
-                    , {field: 'studentMuster', title: '退伍考学', align: 'center', width: 200}
-                    , {field: 'studentProject', title: '十一工程分', align: 'center', width: 200}
+                    , {field: 'attendanceXuenian', title: '学年', fixed: 'left', align: 'center', sort: true, width: 150}
+                    , {field: 'attendanceXueqi', title: '学期', align: 'center', sort: true, width: 150}
+                    , {field: 'attendanceMonth', title: '月份', align: 'center', sort: true, width: 100}
+                    , {field: 'studentId', title: '学生姓名', align: 'center', width: 100}
+                    , {field: 'attendanceState', title: '考勤情况', align: 'center', width: 100}
+                    , {field: 'attendanceDesc', title: '原因', align: 'center', width: 200}
                     , {
-                    field: 'className',
-                    title: '班级',
+                    field: 'attendanceTime',
+                    title: '考勤日期',
                     align: 'center',
-                    templet: '<div>{{d.classInfo.className}}</div>',
+                    sort: true,
+                    templet: "<div>{{layui.util.toDateString(d.writeGradeTime, 'yyyy-MM-dd HH:mm:ss')}}</div>",
                     width: 200
                 }
-                    , {field: 'studentPro', title: '专业', align: 'center', width: 200}
-                    , {field: 'studentSchool', title: '所在分院', align: 'center', width: 200}
+                    , {field: 'staffId', title: '考勤人', align: 'center', width: 100}
                     , {fixed: 'right', title: '操作', align: 'center', toolbar: '#barDemo', width: 165}
                 ]
             ]
@@ -138,7 +134,7 @@
             elem: 'pageDemo' //分页容器的id
             , count: 100 //总页数
             , skin: '#1E9FFF' //自定义选中色值
-            , skip: true //开启跳页
+            //,skip: true //开启跳页
             , jump: function (obj, first) {
                 if (!first) {
                     layer.msg('第' + obj.curr + '页', {offset: 'b'});

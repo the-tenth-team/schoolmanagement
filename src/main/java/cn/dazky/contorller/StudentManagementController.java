@@ -1,8 +1,10 @@
 package cn.dazky.contorller;
 
+import cn.dazky.pojo.AttendanceInfo;
 import cn.dazky.pojo.CommunicateInfo;
 import cn.dazky.pojo.StudentInfo;
 import cn.dazky.pojo.StudentWriteGrade;
+import cn.dazky.service.AttendanceInfoService;
 import cn.dazky.service.CommunicateInfoService;
 import cn.dazky.service.StudentInfoService;
 import cn.dazky.service.StudentWriteGradeService;
@@ -32,12 +34,15 @@ public class StudentManagementController {
     StudentInfoService studentInfoService;
     @Autowired
     StudentWriteGradeService studentWriteGradeService;
+    @Autowired
+    AttendanceInfoService attendanceInfoService;
+
     /**
      * 跳转至班主任评价页面**************************************************************************************************************************
      *
      * @return
      */
-    @RequestMapping("/ToCommunicateInfoList")
+    @RequestMapping("/staff/ToCommunicateInfoList")
     public String ToCommunicateInfoList() {
         return "BackgroundManagement/student/CommunicateInfoList";
     }
@@ -66,15 +71,17 @@ public class StudentManagementController {
 
     /**
      * 跳转至期末成绩页面**************************************************************************************************************************
+     *
      * @return
      */
-    @RequestMapping("/ToStudentWriteGradeList")
-    public String ToStudentWriteGradeList(){
+    @RequestMapping("/staff/ToStudentWriteGradeList")
+    public String ToStudentWriteGradeList() {
         return "BackgroundManagement/student/StudentWriteGradeList";
     }
 
     /**
      * 期末成绩分页显示
+     *
      * @param request
      * @return
      */
@@ -95,13 +102,45 @@ public class StudentManagementController {
         return map;
     }
 
+    /**
+     * 跳转至考勤管理页面**************************************************************************************************************************
+     *
+     * @return
+     */
+    @RequestMapping("/staff/ToAttendanceInfoList")
+    public String ToAttendanceInfoList() {
+        return "BackgroundManagement/student/AttendanceInfoList";
+    }
+
+    /**
+     * 考勤信息分页显示
+     *
+     * @param request
+     * @return
+     */
+    @RequestMapping("/AttendanceInfoList")
+    @ResponseBody
+    public Map<String, Object> findAttendanceInfoAll(HttpServletRequest request) {
+        Map<String, Object> map = new HashMap<String, Object>();
+
+        PageHelper.startPage(Integer.valueOf(request.getParameter("page")), Integer.valueOf(request.getParameter("limit")));
+        List<AttendanceInfo> list = attendanceInfoService.findAttendanceInfoAll();
+        PageInfo<AttendanceInfo> pageInfo = new PageInfo<>(list);
+
+        map.put("code", 0);
+        map.put("msg", "");
+        map.put("count", pageInfo.getTotal());
+        map.put("data", pageInfo.getList());
+
+        return map;
+    }
 
     /**
      * 跳转至学生信息页面**************************************************************************************************************************
      *
      * @return
      */
-    @RequestMapping("/ToStudentInfoList")
+    @RequestMapping("/staff/ToStudentInfoList")
     public String ToStudentInfoList() {
         return "BackgroundManagement/student/StudentInfoList";
     }
