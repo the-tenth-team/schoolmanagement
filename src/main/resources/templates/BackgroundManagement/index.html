@@ -4,7 +4,7 @@
       xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
 <head>
     <meta charset="UTF-8">
-    <title>后台登录-X-admin2.2</title>
+    <title>后台登录</title>
     <link rel="stylesheet" th:href="@{/X-admin/css/font.css}">
     <link rel="stylesheet" th:href="@{/X-admin/css/xadmin.css}">
     <link rel="stylesheet" th:href="@{/X-admin/css/theme11.min.css}"/>
@@ -25,16 +25,11 @@
 <!-- 顶部开始 -->
 <div class="container">
     <div class="logo">
-        <a href="./index.html">X-admin v2.2</a>
+        <a href="./index.html">XX教务管理系统</a>
     </div>
     <div class="left_open">
         <a><i title="展开左侧栏" class="iconfont">&#xe699;</i></a>
     </div>
-    <ul class="layui-nav left fast-add" lay-filter="">
-        <li class="layui-nav-item">
-            <a href="javascript:;">+新增</a>
-        </li>
-    </ul>
     <ul class="layui-nav right" lay-filter="">
         <li class="layui-nav-item">
             <a href="javascript:;">admin</a>
@@ -74,23 +69,7 @@
                         </li>
                 </ul>
             </li>
-            <li>
-                <a href="javascript:;">
-                    <i class="iconfont left-nav-li">&#xe6b8;</i>
-                    <cite >aaaaaa</cite>
-                    <i class="iconfont nav_right">&#xe697;</i>
-                </a>
-                <ul class="sub-menu">
-                    <li >
-                        <a onclick="xadmin.add_tab('bbbbbb','https://www.baidu.com/')" >
-                            <i class="iconfont">&#xe6a7;</i>
-                            <cite >bbbbbb</cite></a>
-                    </li>
-                </ul>
-            </li>
-
         </ul>
-
     </div>
 </div>
 <!-- <div class="x-slide_left"></div> -->
@@ -112,7 +91,7 @@
         </div>
         <div class="layui-tab-content">
             <div class="layui-tab-item layui-show">
-                <iframe src='./welcome.html' frameborder="0" scrolling="yes" class="x-iframe"></iframe>
+                <iframe th:src='@{/adminMain}' frameborder="0" scrolling="yes" class="x-iframe"></iframe>
             </div>
         </div>
         <div id="tab_show"></div>

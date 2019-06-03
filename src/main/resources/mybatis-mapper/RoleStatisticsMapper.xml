@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.dazky.dao.RoleStatisticsMapper">
+    <select id="selectRoleCount" resultType="cn.dazky.vo.Cartogram">
+        select r.role_name name,count(r.role_name) value from staff_info s join role_info r on s.role_id = r.role_id GROUP BY role_name
+    </select>
+</mapper>
