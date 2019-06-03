@@ -14,7 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author 鹏
@@ -76,14 +78,24 @@ public class LoginController {
      */
     @RequestMapping("/getPersonal")
     public String getPersonal(HttpSession session,Model model){
+        //StaffInfo staffInfo = (StaffInfo) session.getAttribute("user");
+        //StaffInfo user = staffService.getStaffById(staffInfo.getStaffId());
+       // RoleInfo roleInfo = roleInfoSerivce.getRoleById(user.getRoleId());
+       // model.addAttribute("user",user);
+       // model.addAttribute("roleInfo",roleInfo);
+        return "BackgroundManagement/personal";
+    }
+
+    @ResponseBody
+    @RequestMapping("/getA")
+    public Map<String, Object> getA(HttpSession session){
         StaffInfo staffInfo = (StaffInfo) session.getAttribute("user");
         StaffInfo user = staffService.getStaffById(staffInfo.getStaffId());
-        //显示员工类型
-        List<RoleInfo> roleInfoList = roleInfoSerivce.getAllRole();
-        //System.out.println("角色"+roleInfoList);
-        model.addAttribute("roleInfoList",roleInfoList);
-        model.addAttribute("user",user);
-        return "BackgroundManagement/personal";
+        RoleInfo roleInfo = roleInfoSerivce.getRoleById(user.getRoleId());
+        Map<String,Object> map = new HashMap<>();
+        map.put("user",user);
+        map.put("roleInfo",roleInfo);
+        return map;
     }
 
 

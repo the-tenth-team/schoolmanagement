@@ -22,4 +22,9 @@ public class RoleInfoSerivceImpl implements RoleInfoSerivce {
     public List<RoleInfo> getAllRole() {
         return roleInfoMapper.selectByExample(null);
     }
+
+    @Override
+    public RoleInfo getRoleById(Integer roleId) {
+        return roleInfoMapper.selectByPrimaryKey(roleId);
+    }
 }

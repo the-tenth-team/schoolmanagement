@@ -107,7 +107,11 @@ public class StaffController {
 
     @ResponseBody
     @RequestMapping("/updateStaff")
-    public Msg updateStaff(StaffInfo staffInfo){
+    public Msg updateStaff(StaffInfo staffInfo,HttpSession session){
+        StaffInfo user = (StaffInfo) session.getAttribute("user");
+        staffInfo.setRoleId(user.getRoleId());
+        staffInfo.setStaffId(user.getStaffId());
+        staffInfo.setStaffState(user.getStaffState());
         System.out.println("获取数据"+staffInfo);
         staffService.update(staffInfo);
         return Msg.success();

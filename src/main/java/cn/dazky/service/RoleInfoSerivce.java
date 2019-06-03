@@ -11,5 +11,16 @@ import java.util.List;
  */
 public interface RoleInfoSerivce {
 
+    /**
+     * 获取所有的角色
+     * @return
+     */
     List<RoleInfo> getAllRole();
+
+    /**
+     * 根据角色id获取角色信息
+     * @param roleId
+     * @return
+     */
+    RoleInfo getRoleById(Integer roleId);
 }
