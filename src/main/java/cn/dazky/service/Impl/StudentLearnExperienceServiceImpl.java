@@ -21,7 +21,7 @@ public class StudentLearnExperienceServiceImpl implements StudentLearnExperience
 
     /*所有学生学习经历*/
     @Override
-    public List<StudentLearnExperience> findStudentLearnExperienceAll() {
+    public List<StudentLearnExperience> getStudentLearnExperienceAll() {
         return studentLearnExperienceMapper.selectByExample(null);
     }
 }

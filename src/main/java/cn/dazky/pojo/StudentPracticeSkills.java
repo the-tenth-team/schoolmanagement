@@ -22,6 +22,24 @@ public class StudentPracticeSkills {
     private Date regTime;
 
     private String practiceNote;
+    private StudentInfo studentInfo;
+    private StaffInfo staffInfo;
+
+    public StudentInfo getStudentInfo() {
+        return studentInfo;
+    }
+
+    public void setStudentInfo(StudentInfo studentInfo) {
+        this.studentInfo = studentInfo;
+    }
+
+    public StaffInfo getStaffInfo() {
+        return staffInfo;
+    }
+
+    public void setStaffInfo(StaffInfo staffInfo) {
+        this.staffInfo = staffInfo;
+    }
 
     public Integer getStudentPracticeId() {
         return studentPracticeId;
@@ -101,5 +119,23 @@ public class StudentPracticeSkills {
 
     public void setPracticeNote(String practiceNote) {
         this.practiceNote = practiceNote == null ? null : practiceNote.trim();
+    }
+
+    @Override
+    public String toString() {
+        return "StudentPracticeSkills{" +
+                "studentPracticeId=" + studentPracticeId +
+                ", studentId=" + studentId +
+                ", staffId=" + staffId +
+                ", practiceStart=" + practiceStart +
+                ", practiceEnd=" + practiceEnd +
+                ", practiceAddress='" + practiceAddress + '\'' +
+                ", practiceContent='" + practiceContent + '\'' +
+                ", practiceScore='" + practiceScore + '\'' +
+                ", regTime=" + regTime +
+                ", practiceNote='" + practiceNote + '\'' +
+                ", studentInfo=" + studentInfo +
+                ", staffInfo=" + staffInfo +
+                '}';
     }
 }

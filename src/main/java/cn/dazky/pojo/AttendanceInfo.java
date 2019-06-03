@@ -23,6 +23,25 @@ public class AttendanceInfo {
 
     private String attendanceMonth;
 
+    private StudentInfo studentInfo;
+    private StaffInfo staffInfo;
+
+    public StudentInfo getStudentInfo() {
+        return studentInfo;
+    }
+
+    public void setStudentInfo(StudentInfo studentInfo) {
+        this.studentInfo = studentInfo;
+    }
+
+    public StaffInfo getStaffInfo() {
+        return staffInfo;
+    }
+
+    public void setStaffInfo(StaffInfo staffInfo) {
+        this.staffInfo = staffInfo;
+    }
+
     public Integer getAttendanceId() {
         return attendanceId;
     }
@@ -101,5 +120,23 @@ public class AttendanceInfo {
 
     public void setAttendanceMonth(String attendanceMonth) {
         this.attendanceMonth = attendanceMonth == null ? null : attendanceMonth.trim();
+    }
+
+    @Override
+    public String toString() {
+        return "AttendanceInfo{" +
+                "attendanceId=" + attendanceId +
+                ", studentId=" + studentId +
+                ", staffId=" + staffId +
+                ", attendanceDesc='" + attendanceDesc + '\'' +
+                ", attendanceState='" + attendanceState + '\'' +
+                ", attendanceTime=" + attendanceTime +
+                ", attendanceRemark='" + attendanceRemark + '\'' +
+                ", attendanceXuenian='" + attendanceXuenian + '\'' +
+                ", attendanceXueqi='" + attendanceXueqi + '\'' +
+                ", attendanceMonth='" + attendanceMonth + '\'' +
+                ", studentInfo=" + studentInfo +
+                ", staffInfo=" + staffInfo +
+                '}';
     }
 }
