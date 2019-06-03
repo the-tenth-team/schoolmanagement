@@ -5,6 +5,12 @@ import cn.dazky.pojo.DisciplineInfoExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
+/**
+ *
+ * 课程信息Dao
+ *
+ */
+
 public interface DisciplineInfoMapper {
     int countByExample(DisciplineInfoExample example);
 
