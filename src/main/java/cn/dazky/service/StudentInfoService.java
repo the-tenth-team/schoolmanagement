@@ -30,4 +30,11 @@ public interface StudentInfoService {
      * @date 2019/5/29 21:43
      */
     List<StudentInfo> getStudentInfoAll();
+
+    /**
+     * 获取学生的总数
+     *
+     * @return
+     */
+    public Integer getStudentCount();
 }
