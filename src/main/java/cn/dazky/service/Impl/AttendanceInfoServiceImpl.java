@@ -21,7 +21,7 @@ public class AttendanceInfoServiceImpl implements AttendanceInfoService {
 
     /*查询所有学生考勤信息*/
     @Override
-    public List<AttendanceInfo> findAttendanceInfoAll() {
+    public List<AttendanceInfo> getAttendanceInfoAll() {
         return attendanceInfoMapper.selectByExample(null);
     }
 }

@@ -14,7 +14,8 @@ import java.util.List;
 public interface StudentWriteGradeService {
     /**
      * 查询所有成绩
+     *
      * @return
      */
-    List<StudentWriteGrade> findStudentWriteGradeListAll();
+    List<StudentWriteGrade> getStudentWriteGradeListAll();
 }

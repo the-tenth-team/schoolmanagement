@@ -18,6 +18,24 @@ public class StudentLearnExperience {
     private Date regTime;
 
     private String learnNote;
+    private StudentInfo studentInfo;
+    private StaffInfo staffInfo;
+
+    public StudentInfo getStudentInfo() {
+        return studentInfo;
+    }
+
+    public void setStudentInfo(StudentInfo studentInfo) {
+        this.studentInfo = studentInfo;
+    }
+
+    public StaffInfo getStaffInfo() {
+        return staffInfo;
+    }
+
+    public void setStaffInfo(StaffInfo staffInfo) {
+        this.staffInfo = staffInfo;
+    }
 
     public Integer getStudentLearnId() {
         return studentLearnId;
@@ -81,5 +99,21 @@ public class StudentLearnExperience {
 
     public void setLearnNote(String learnNote) {
         this.learnNote = learnNote == null ? null : learnNote.trim();
+    }
+
+    @Override
+    public String toString() {
+        return "StudentLearnExperience{" +
+                "studentLearnId=" + studentLearnId +
+                ", studentId=" + studentId +
+                ", staffId=" + staffId +
+                ", learnAllyears='" + learnAllyears + '\'' +
+                ", learnSchool='" + learnSchool + '\'' +
+                ", learnPosition='" + learnPosition + '\'' +
+                ", regTime=" + regTime +
+                ", learnNote='" + learnNote + '\'' +
+                ", studentInfo=" + studentInfo +
+                ", staffInfo=" + staffInfo +
+                '}';
     }
 }

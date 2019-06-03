@@ -12,5 +12,5 @@ import java.util.List;
  **/
 public interface StudentLearnExperienceService {
     /*所有学生学习经历*/
-    List<StudentLearnExperience> findStudentLearnExperienceAll();
+    List<StudentLearnExperience> getStudentLearnExperienceAll();
 }

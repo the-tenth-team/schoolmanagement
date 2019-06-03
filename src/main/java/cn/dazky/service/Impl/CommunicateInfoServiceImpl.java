@@ -20,9 +20,10 @@ import java.util.List;
 public class CommunicateInfoServiceImpl implements CommunicateInfoService {
     @Resource
     CommunicateInfoMapper communicateInfoMapper;
+
     /*查询所有班主任评价*/
     @Override
-    public List<CommunicateInfo> findCommunicateInfoAll() {
+    public List<CommunicateInfo> getCommunicateInfoAll() {
         return communicateInfoMapper.selectByExample(null);
     }
 }

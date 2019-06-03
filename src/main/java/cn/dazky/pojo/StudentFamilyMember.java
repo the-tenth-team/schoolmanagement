@@ -22,6 +22,24 @@ public class StudentFamilyMember {
     private Date regTime;
 
     private String familyNote;
+    private StudentInfo studentInfo;
+    private StaffInfo staffInfo;
+
+    public StudentInfo getStudentInfo() {
+        return studentInfo;
+    }
+
+    public void setStudentInfo(StudentInfo studentInfo) {
+        this.studentInfo = studentInfo;
+    }
+
+    public StaffInfo getStaffInfo() {
+        return staffInfo;
+    }
+
+    public void setStaffInfo(StaffInfo staffInfo) {
+        this.staffInfo = staffInfo;
+    }
 
     public Integer getStudentFamilyId() {
         return studentFamilyId;
@@ -101,5 +119,23 @@ public class StudentFamilyMember {
 
     public void setFamilyNote(String familyNote) {
         this.familyNote = familyNote == null ? null : familyNote.trim();
+    }
+
+    @Override
+    public String toString() {
+        return "StudentFamilyMember{" +
+                "studentFamilyId=" + studentFamilyId +
+                ", studentId=" + studentId +
+                ", staffId=" + staffId +
+                ", familyName='" + familyName + '\'' +
+                ", familyApp='" + familyApp + '\'' +
+                ", familyAge=" + familyAge +
+                ", familyZcmm='" + familyZcmm + '\'' +
+                ", workplace='" + workplace + '\'' +
+                ", regTime=" + regTime +
+                ", familyNote='" + familyNote + '\'' +
+                ", studentInfo=" + studentInfo +
+                ", staffInfo=" + staffInfo +
+                '}';
     }
 }
