@@ -1,20 +1,26 @@
 package cn.dazky.pojo;
 
-public class DisciplineInfo {
+import java.io.Serializable;
+
+/**
+ * 课程信息表
+ */
+public class DisciplineInfo implements Serializable {
+    //课程信息表ID
     private Integer disciplineId;
-
+    //课程编号
     private String disciplineNo;
-
+    //课程名称
     private String disciplineName;
-
+    //学时
     private Double disciplineTuition;
-
+    //学分
     private Integer disciplineBring;
-
+    //课程类型
     private String disciplineType;
-
+    //课程描述
     private String disciplineDesc;
-
+    //课程状态
     private String disciplineIsuesd;
 
     public Integer getDisciplineId() {

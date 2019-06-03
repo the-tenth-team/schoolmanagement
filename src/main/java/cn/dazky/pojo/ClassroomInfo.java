@@ -1,16 +1,20 @@
 package cn.dazky.pojo;
 
+/**
+ * 教室信息Bean
+ */
 public class ClassroomInfo {
+    //教室ID
     private Integer classroomId;
-
+    //教室名
     private String classroomName;
-
+    //容纳人数
     private Integer classroomMax;
-
+    //设备信息
     private String classroomInfo;
-
+    //备注信息
     private String classroomRemark;
-
+    //使用状态
     private String classroomMark;
 
     public Integer getClassroomId() {

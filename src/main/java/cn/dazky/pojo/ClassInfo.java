@@ -2,11 +2,15 @@ package cn.dazky.pojo;
 
 import java.util.Date;
 
+/**
+ *Bean
+ */
 public class ClassInfo {
+    //ID
     private Integer classId;
-
+    //
     private Integer syllabusId;
-
+    //
     private Integer classroomId;
 
     private Integer staffId;
