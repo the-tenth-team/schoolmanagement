@@ -19,13 +19,14 @@ import java.util.List;
 public class StudentWriteGradeServiceImpl implements StudentWriteGradeService {
     @Resource
     StudentWriteGradeMapper studentWriteGradeMapper;
+
     /**
      * 查询所有成绩
      *
      * @return
      */
     @Override
-    public List<StudentWriteGrade> findStudentWriteGradeListAll() {
+    public List<StudentWriteGrade> getStudentWriteGradeListAll() {
         return studentWriteGradeMapper.selectByExample(null);
     }
 }

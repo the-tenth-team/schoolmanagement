@@ -24,6 +24,24 @@ public class StudentGraduationThesis {
     private Date regTime;
 
     private String paperNote;
+    private StudentInfo studentInfo;
+    private StaffInfo staffInfo;
+
+    public StudentInfo getStudentInfo() {
+        return studentInfo;
+    }
+
+    public void setStudentInfo(StudentInfo studentInfo) {
+        this.studentInfo = studentInfo;
+    }
+
+    public StaffInfo getStaffInfo() {
+        return staffInfo;
+    }
+
+    public void setStaffInfo(StaffInfo staffInfo) {
+        this.staffInfo = staffInfo;
+    }
 
     public Integer getStudentPaperId() {
         return studentPaperId;
@@ -111,5 +129,24 @@ public class StudentGraduationThesis {
 
     public void setPaperNote(String paperNote) {
         this.paperNote = paperNote == null ? null : paperNote.trim();
+    }
+
+    @Override
+    public String toString() {
+        return "StudentGraduationThesis{" +
+                "studentPaperId=" + studentPaperId +
+                ", studentId=" + studentId +
+                ", staffId=" + staffId +
+                ", paperTitle='" + paperTitle + '\'' +
+                ", paperTeacher='" + paperTeacher + '\'' +
+                ", paperStart='" + paperStart + '\'' +
+                ", paperTime=" + paperTime +
+                ", paperScore='" + paperScore + '\'' +
+                ", paperComments='" + paperComments + '\'' +
+                ", regTime=" + regTime +
+                ", paperNote='" + paperNote + '\'' +
+                ", studentInfo=" + studentInfo +
+                ", staffInfo=" + staffInfo +
+                '}';
     }
 }

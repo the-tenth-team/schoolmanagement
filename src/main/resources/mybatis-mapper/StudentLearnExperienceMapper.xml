@@ -10,6 +10,10 @@
     <result column="learn_position" property="learnPosition" jdbcType="VARCHAR" />
     <result column="reg_time" property="regTime" jdbcType="TIMESTAMP" />
     <result column="learn_note" property="learnNote" jdbcType="VARCHAR" />
+    <association property="studentInfo" column="student_id" javaType="cn.dazky.pojo.StudentInfo"
+                 select="cn.dazky.dao.StudentInfoMapper.selectByPrimaryKey"></association>
+    <association property="staffInfo" column="staff_id" javaType="cn.dazky.pojo.StaffInfo"
+                 select="cn.dazky.dao.StaffInfoMapper.selectByPrimaryKey"></association>
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >

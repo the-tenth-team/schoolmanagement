@@ -12,6 +12,10 @@
     <result column="workplace" property="workplace" jdbcType="VARCHAR" />
     <result column="reg_time" property="regTime" jdbcType="TIMESTAMP" />
     <result column="family_note" property="familyNote" jdbcType="VARCHAR" />
+    <association property="studentInfo" column="student_id" javaType="cn.dazky.pojo.StudentInfo"
+                 select="cn.dazky.dao.StudentInfoMapper.selectByPrimaryKey"></association>
+    <association property="staffInfo" column="staff_id" javaType="cn.dazky.pojo.StaffInfo"
+                 select="cn.dazky.dao.StaffInfoMapper.selectByPrimaryKey"></association>
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >

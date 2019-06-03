@@ -44,9 +44,6 @@
             , element = layui.element //元素操作
             , slider = layui.slider //滑块
 
-        //向世界问个好
-        layer.msg('期末成绩');
-
         //监听Tab切换
         element.on('tab(demo)', function (data) {
             layer.tips('切换了 ' + data.index + '：' + this.innerHTML, this, {
@@ -64,15 +61,15 @@
             , cols: [
                 [ //表头
                     {type: 'checkbox', fixed: 'left'}
-                    , {field: 'writeGradeXuenian', title: '学年', fixed: 'left', align: 'center', width: 200}
+                    , {field: 'writeGradeXuenian', title: '学年', fixed: 'left', align: 'center', width: 150}
                     , {field: 'writeGradeXueqi', title: '学期', align: 'center', width: 100}
-                    , {field: 'classId', title: '班级', align: 'center', width: 100}
-                    , {field: 'studentId', title: '学生姓名', align: 'center', width: 150}
-                    , {field: 'disciplineId', title: '课程名', align: 'center', width: 100}
-                    , {field: 'disciplineId', title: '学时', align: 'center', width: 100}
+                    , {field: 'className', title: '班级', align: 'center', templet: '<div>{{d.classInfo.className}}</div>', width: 100}
+                    , {field: 'studentName', title: '学生姓名', align: 'center', templet: '<div>{{d.studentInfo.studentName}}</div>', width: 100}
+                    , {field: 'disciplineName', title: '课程名', align: 'center', templet: '<div>{{d.disciplineInfo.disciplineName}}</div>', width: 150}
+                    , {field: 'disciplineBring', title: '学时', align: 'center', templet: '<div>{{d.disciplineInfo.disciplineBring}}</div>', width: 100}
                     , {field: 'writeGrade', title: '成绩', align: 'center', sort: true, width: 100}
                     , {field: 'writeGradeType', title: '考试类型', align: 'center', width: 100}
-                    , {field: 'staffId', title: '登分人', align: 'center', width: 200}
+                    , {field: 'staffName', title: '登分人', align: 'center', templet: '<div>{{d.staffInfo.staffName}}</div>', width: 100}
                     , {
                     field: 'writeGradeTime',
                     title: '登分日期',

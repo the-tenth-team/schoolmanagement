@@ -44,9 +44,6 @@
             , element = layui.element //元素操作
             , slider = layui.slider //滑块
 
-        //向世界问个好
-        layer.msg('学生信息');
-
         //监听Tab切换
         element.on('tab(demo)', function (data) {
             layer.tips('切换了 ' + data.index + '：' + this.innerHTML, this, {
@@ -64,25 +61,25 @@
             , cols: [
                 [ //表头
                     {type: 'checkbox', fixed: 'left'}
-                    , {field: 'studentNo', title: '学号', fixed: 'left', align: 'center', width: 200}
-                    , {field: 'studentName', title: '姓名', align: 'center', width: 100}
+                    , {field: 'studentNo', title: '学号', fixed: 'left', align: 'center', width: 150}
+                    , {field: 'studentName', title: '姓名', fixed: 'left', align: 'center', width: 100}
                     , {field: 'studentSex', title: '性别', align: 'center', width: 100}
-                    , {field: 'studentBirthday', title: '出生年月', align: 'center', width: 150}
-                    , {field: 'studentTellphone', title: '手机号码', align: 'center', width: 100}
+                    , {field: 'studentBirthday', title: '出生年月', align: 'center',sort:true,templet: "<div>{{layui.util.toDateString(d.communicateTime, 'yyyy-MM-dd')}}</div>", width: 150}
+                    , {field: 'studentTellphone', title: '手机号码', align: 'center', width: 150}
                     , {field: 'studentQq', title: 'QQ', align: 'center', width: 100}
                     , {field: 'studentHard', title: '困难生', align: 'center', width: 100}
                     , {field: 'studentLoan', title: '助学贷款', align: 'center', width: 100}
-                    , {field: 'studentMuster', title: '退伍考学', align: 'center', width: 200}
-                    , {field: 'studentProject', title: '十一工程分', align: 'center', width: 200}
+                    , {field: 'studentMuster', title: '退伍考学', align: 'center', width: 100}
+                    , {field: 'studentProject', title: '十一工程分', align: 'center', width: 100}
                     , {
                     field: 'className',
                     title: '班级',
                     align: 'center',
                     templet: '<div>{{d.classInfo.className}}</div>',
-                    width: 200
+                    width: 150
                 }
-                    , {field: 'studentPro', title: '专业', align: 'center', width: 200}
-                    , {field: 'studentSchool', title: '所在分院', align: 'center', width: 200}
+                    , {field: 'studentPro', title: '专业', align: 'center', width: 250}
+                    , {field: 'studentSchool', title: '所在分院', align: 'center', width: 150}
                     , {fixed: 'right', title: '操作', align: 'center', toolbar: '#barDemo', width: 165}
                 ]
             ]

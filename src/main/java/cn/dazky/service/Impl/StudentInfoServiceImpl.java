@@ -50,7 +50,7 @@ public class StudentInfoServiceImpl implements StudentInfoService {
      * @date 2019/5/29 21:42
      */
     @Override
-    public List<StudentInfo> findStudentInfoAll() {
+    public List<StudentInfo> getStudentInfoAll() {
         return studentInfoMapper.selectByExample(null);
     }
 }

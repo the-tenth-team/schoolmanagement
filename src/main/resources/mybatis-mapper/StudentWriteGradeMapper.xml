@@ -13,6 +13,14 @@
     <result column="write_grade_xuenian" property="writeGradeXuenian" jdbcType="VARCHAR" />
     <result column="write_grade_xueqi" property="writeGradeXueqi" jdbcType="VARCHAR" />
     <result column="write_grade_type" property="writeGradeType" jdbcType="VARCHAR" />
+    <association property="studentInfo" column="student_id" javaType="cn.dazky.pojo.StudentInfo"
+                 select="cn.dazky.dao.StudentInfoMapper.selectByPrimaryKey"></association>
+    <association property="staffInfo" column="staff_id" javaType="cn.dazky.pojo.StaffInfo"
+                 select="cn.dazky.dao.StaffInfoMapper.selectByPrimaryKey"></association>
+    <association property="classInfo" column="class_id" javaType="cn.dazky.pojo.ClassInfo"
+                 select="cn.dazky.dao.ClassInfoMapper.selectByPrimaryKey"></association>
+    <association property="disciplineInfo" column="discipline_id" javaType="cn.dazky.pojo.DisciplineInfo"
+                 select="cn.dazky.dao.DisciplineInfoMapper.selectByPrimaryKey"></association>
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
