@@ -37,4 +37,14 @@ public class StaffServiceImpl implements StaffService {
     public Integer getStaffCount() {
         return staffInfoMapper.countByExample(null);
     }
+
+    @Override
+    public void update(StaffInfo staffInfo) {
+        staffInfoMapper.updateByPrimaryKey(staffInfo);
+    }
+
+    @Override
+    public StaffInfo getStaffById(Integer staffId) {
+        return staffInfoMapper.selectByPrimaryKey(staffId);
+    }
 }

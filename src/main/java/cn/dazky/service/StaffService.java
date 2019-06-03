@@ -20,4 +20,17 @@ public interface StaffService {
      * @return
      */
     Integer getStaffCount();
+
+    /**
+     * 更新员工
+     * @param staffInfo
+     */
+    void update(StaffInfo staffInfo);
+
+    /**
+     * 根据员工id获取员工的信息
+     * @param staffId  员工id
+     * @return
+     */
+    StaffInfo getStaffById(Integer staffId);
 }

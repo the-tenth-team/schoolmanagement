@@ -4,6 +4,7 @@ import cn.dazky.pojo.RoleAnthorityInfo;
 import cn.dazky.pojo.StaffInfo;
 import cn.dazky.service.RoleAnthorityService;
 import cn.dazky.service.StaffService;
+import cn.dazky.util.Msg;
 import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
@@ -89,7 +90,7 @@ public class StaffController {
         StaffInfo staffInfo = (StaffInfo) session.getAttribute("user");
         //先查询一级菜单
         List<RoleAnthorityInfo> roleAnthorityInfoList = roleAnthorityService.getAllWithAnthortyByRoleId(staffInfo.getRoleId(),1);
-        System.out.println(roleAnthorityInfoList);
+        //System.out.println(roleAnthorityInfoList);
         //查出1级菜单对应的2级子菜单
         for (int i=0;i<roleAnthorityInfoList.size();i++){
             //把1级菜单放入集合中
@@ -98,9 +99,17 @@ public class StaffController {
             //把每一个一级菜单拥有的二级子菜单放到map中
             secondMenu.put(i+1,secondRoleAnthorityInfoList);
         }
-        System.out.println("二级"+secondMenu);
+        //System.out.println("二级"+secondMenu);
         model.addAttribute("stairMenu",stairMenu);
         model.addAttribute("secoudMenu",secondMenu);
         return "BackgroundManagement/index";
+    }
+
+    @ResponseBody
+    @RequestMapping("/updateStaff")
+    public Msg updateStaff(StaffInfo staffInfo){
+        System.out.println("获取数据"+staffInfo);
+        staffService.update(staffInfo);
+        return Msg.success();
     }
 }

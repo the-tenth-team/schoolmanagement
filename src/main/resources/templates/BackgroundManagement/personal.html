@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" class="x-admin-sm"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/X-admin/css/font.css}">
+    <link rel="stylesheet" th:href="@{/X-admin/css/xadmin.css}">
+    <link rel="stylesheet" th:href="@{/X-admin/css/theme11.min.css}"/>
+    <!-- <link rel="stylesheet" href="./css/theme5.css"> -->
+    <script type="text/javascript" th:src="@{/bootstrap-3.3.7-dist/js/jquery-3.3.1.min.js}"></script>
+    <script th:src="@{/X-admin/lib/layui/layui.js}" charset="utf-8"></script>
+    <script th:src="@{/X-admin/js/xadmin.js}" charset="utf-8"></script>
+    <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+    <!--[if lt IE 9]>-->
+    <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+    <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+</head>
+<body>
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md12 layui-anim layui-anim-scaleSpring">
+            <div class="layui-col-md12 layui-card ">
+                <div class="layui-card-body">
+                    <form class="layui-form layui-form-pane">
+                        <div class="layui-col-md4 layui-col-md-offset2">
+                            <input type="text" th:value="${user.getStaffId()}" name="staffId" hidden="hidden">
+                            <input type="text" th:value="${user.getRoleId()}" name="roleId" hidden="hidden">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">姓名</label>
+                                <div class="layui-input-block" style="width: 200px">
+                                    <input type="text" th:value="${user.getStaffName()}" name="staffName" required lay-verify="required" placeholder="请输入姓名"
+                                           autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">性别</label>
+                                <div class="layui-input-block" style="width: 200px">
+                                    <input type="text" th:value="${user.getStaffSex()}" name="staffSex" required lay-verify="required" placeholder="请输入性别"
+                                           autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">身份证</label>
+                                <div class="layui-input-block" style="width: 200px">
+                                    <input type="text" th:value="${user.getStaffIdcard()}" name="staffIdcard" required lay-verify="required" placeholder="请输入身份证"
+                                           autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">办公电话</label>
+                                <div class="layui-input-block" style="width: 200px">
+                                    <input type="text" th:value="${user.getStaffOfficePhone()}" name="staffOfficePhone" placeholder="请输入办公电话"
+                                           autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">移动电话</label>
+                                <div class="layui-input-block" style="width: 200px">
+                                    <input type="text" th:value="${user.getStaffMobilePhone()}" name="staffMobilePhone" required lay-verify="required" placeholder="请输入移动电话"
+                                           autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">QQ</label>
+                                <div class="layui-input-block" style="width: 200px">
+                                    <input type="text" th:value="${user.getStaffQq()}" name="StaffQq"  placeholder="请输入QQ" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">教育水平</label>
+                                <div class="layui-input-block" style="width: 200px">
+                                    <input type="text" th:value="${session.user.getStaffEductionLevel()}" name="staffEductionLevel" placeholder="请输入教育水平" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">账号</label>
+                                <div class="layui-input-block" style="width: 200px">
+                                    <input type="text" th:value="${user.getUserNumber()}" name="userNumber" required lay-verify="required"  placeholder="请输入账号" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-col-md6">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">年龄</label>
+                                <div class="layui-input-block" style="width: 200px">
+                                    <input type="text" th:value="${user.getStaffAge()}" name="staffAge" placeholder="请输入年龄" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">籍贯</label>
+                                <div class="layui-input-block" style="width: 200px">
+                                    <input type="text" th:value="${user.getStaffNativePlace()}" name="staffNativePlace" placeholder="请输入籍贯" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">出生日期</label>
+                                <div class="layui-input-block" style="width: 200px">
+                                    <input type="text" th:value="${user.getStaffBrithday()}" name="staffBrithday" value="2017-12-02" placeholder="请输入出生日期" id="date" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">电子邮箱</label>
+                                <div class="layui-input-block" style="width: 200px">
+                                    <input type="text" th:value="${session.user.getStaffEamil()}" name="staffEamil" placeholder="请输入电子邮箱" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">家庭住址</label>
+                                <div class="layui-input-block" style="width: 200px">
+                                    <input type="text" th:value="${user.getStaffAddr()}" name="staffAddr" placeholder="请输入家庭住址" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">入职时间</label>
+                                <div class="layui-input-block" style="width: 200px">
+                                    <input type="text" th:value="${user.getStaffEntryTime()}" name="staffEntryTime" value="2017-12-02" placeholder="请输入入职时间" id="date1" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">员工类型</label>
+                                <div class="layui-input-block" style="width: 200px">
+                                    <select name="staffState" lay-filter="aihao">
+                                        <option th:each="roles,stat:${roleInfoList}" th:text="${roles.getRoleName()}" th:value="${roles.getRoleId()}" th:selected="${user.getRoleId()==roles.getRoleId()}"></option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">密码</label>
+                                <div class="layui-input-block" style="width: 200px">
+                                    <input type="password" th:value="${user.getUserPassowrd()}" name="userPassowrd" required lay-verify="required"
+                                           placeholder="请输入密码" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-col-md7 layui-col-md-offset2">
+                            <div class="layui-form-item layui-form-text">
+                                <label class="layui-form-label">文本域</label>
+                                <div class="layui-input-block">
+                                    <textarea name="staffRemark" th:text="${user.getStaffRemark()}" placeholder="请输入内容" class="layui-textarea"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-col-md6 layui-col-md-offset4">
+                            <div class="layui-form-item">
+                                <div class="layui-input-block">
+                                    <button class="layui-btn" lay-submit lay-filter="formDemo">保存</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <script>
+                //Demo
+                layui.use(['form','laydate'], function () {
+                    var form = layui.form,
+                        laydate = layui.laydate;
+                    //日期
+                    laydate.render({
+                        elem: '#date'
+                    });
+                    laydate.render({
+                        elem: '#date1'
+                    });
+
+                    //监听提交
+                    form.on('submit(formDemo)', function (data) {
+                        //layer.msg(JSON.stringify(data.field));
+                        $.ajax({
+                            url:'/staff/updateStaff',
+                            data: $("form").serialize(),
+                            type: 'post',
+                            success: function (msg) {
+                                location.reload();
+                            }
+                        })
+                    });
+                });
+            </script>
+        </div>
+    </div>
+</div>
+</body>
+</html>

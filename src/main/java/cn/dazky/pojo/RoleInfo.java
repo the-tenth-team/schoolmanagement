@@ -40,4 +40,14 @@ public class RoleInfo {
     public void setRoleState(String roleState) {
         this.roleState = roleState == null ? null : roleState.trim();
     }
+
+    @Override
+    public String toString() {
+        return "RoleInfo{" +
+                "roleId=" + roleId +
+                ", roleName='" + roleName + '\'' +
+                ", roleDesc='" + roleDesc + '\'' +
+                ", roleState='" + roleState + '\'' +
+                '}';
+    }
 }

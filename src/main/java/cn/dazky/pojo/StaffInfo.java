@@ -1,5 +1,7 @@
 package cn.dazky.pojo;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -21,6 +23,7 @@ public class StaffInfo implements Serializable{
 
     private String staffIdcard;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date staffBrithday;
 
     private String staffOfficePhone;
@@ -33,6 +36,7 @@ public class StaffInfo implements Serializable{
 
     private String staffQq;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date staffEntryTime;
 
     private String staffEductionLevel;
@@ -195,5 +199,30 @@ public class StaffInfo implements Serializable{
 
     public void setUserPassowrd(String userPassowrd) {
         this.userPassowrd = userPassowrd == null ? null : userPassowrd.trim();
+    }
+
+    @Override
+    public String toString() {
+        return "StaffInfo{" +
+                "staffId=" + staffId +
+                ", roleId=" + roleId +
+                ", staffName='" + staffName + '\'' +
+                ", staffSex='" + staffSex + '\'' +
+                ", staffAge=" + staffAge +
+                ", staffNativePlace='" + staffNativePlace + '\'' +
+                ", staffIdcard='" + staffIdcard + '\'' +
+                ", staffBrithday=" + staffBrithday +
+                ", staffOfficePhone='" + staffOfficePhone + '\'' +
+                ", staffMobilePhone='" + staffMobilePhone + '\'' +
+                ", staffEamil='" + staffEamil + '\'' +
+                ", staffAddr='" + staffAddr + '\'' +
+                ", staffQq='" + staffQq + '\'' +
+                ", staffEntryTime=" + staffEntryTime +
+                ", staffEductionLevel='" + staffEductionLevel + '\'' +
+                ", staffRemark='" + staffRemark + '\'' +
+                ", staffState='" + staffState + '\'' +
+                ", userNumber='" + userNumber + '\'' +
+                ", userPassowrd='" + userPassowrd + '\'' +
+                '}';
     }
 }
