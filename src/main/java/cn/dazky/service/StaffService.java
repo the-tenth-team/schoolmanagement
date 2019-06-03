@@ -8,5 +8,16 @@ import cn.dazky.pojo.StaffInfo;
  */
 public interface StaffService {
 
+    /**
+     * 后台管理员登陆
+     * @param user_number
+     * @return
+     */
     public StaffInfo login(String user_number);
+
+    /**
+     * 获取教师的人数
+     * @return
+     */
+    Integer getStaffCount();
 }

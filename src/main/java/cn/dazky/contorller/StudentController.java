@@ -1,6 +1,5 @@
 package cn.dazky.contorller;
 
-import cn.dazky.pojo.Msg;
 import cn.dazky.pojo.StudentInfo;
 import cn.dazky.service.StudentInfoService;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" class="x-admin-sm"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/X-admin/css/font.css}">
+    <link rel="stylesheet" th:href="@{/X-admin/css/xadmin.css}">
+    <link rel="stylesheet" th:href="@{/X-admin/css/theme11.min.css}"/>
+    <script th:src="@{/X-admin/lib/layui/layui.js}" charset="utf-8"></script>
+    <script th:src="@{/X-admin/js/xadmin.js}" charset="utf-8"></script>
+    <script th:src="@{/echarts.min.js}" charset="utf-8"></script>
+    <script type="text/javascript" th:src="@{/bootstrap-3.3.7-dist/js/jquery-3.3.1.min.js}"></script>
+    <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+    <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+    <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $.ajax({
+                url: '/getRoleCount',
+                type: 'post',
+                async: true,
+                dataType: 'json',
+                success: function (result) {
+                    var myChart = echarts.init(document.getElementById('chartmain'));
+                    myChart.hideLoading();//隐藏加载动画
+                    myChart.setOption({
+                        tooltip: {
+                            trigger: 'item',
+                            formatter: "{a} <br/>{b} : {c} ({d}%)"
+                        },
+                        legend: {
+                            orient: 'vertical',
+                            x: 'left',
+                            // data:['直接访问','邮件营销','联盟广告','视频广告','搜索引擎']
+                            data: result
+                        },
+                        toolbox: {
+                            show: true,
+                            feature: {
+                                mark: {show: true},
+                                dataView: {show: true, readOnly: false},
+                                magicType: {
+                                    show: true,
+                                    type: ['pie', 'funnel'],
+                                    option: {
+                                        funnel: {
+                                            x: '25%',
+                                            width: '50%',
+                                            funnelAlign: 'left',
+                                            max: 1548
+                                        }
+                                    }
+                                },
+                                restore: {show: true},
+                                saveAsImage: {show: true}
+                            }
+                        },
+                        calculable: true,
+                        series: [
+                            {
+                                name: '访问来源',
+                                type: 'pie',
+                                radius: '55%',
+                                center: ['50%', '60%'],
+                                data: result
+                            }
+                        ]
+                    });
+                }
+            })
+
+        })
+
+    </script>
+</head>
+<body>
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md12 layui-anim layui-anim-scaleSpring">
+            <div class="layui-card">
+                <div class="layui-card-body ">
+                    <blockquote class="layui-elem-quote">欢迎管理员：
+                        <span th:text="${session.user.getStaffName()}" class="x-red">test</span>
+                        &nbsp;&nbsp;<span id="times"></span>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md6 layui-anim layui-anim-scaleSpring" >
+            <div class="layui-card">
+                <div class="layui-card-header">人数统计</div>
+                <div class="layui-card-body ">
+                    <ul class="layui-row layui-col-space10 layui-this x-admin-carousel x-admin-backlog">
+                        <li class="layui-col-md6 layui-col-xs6">
+                            <a href="javascript:;" class="x-admin-backlog-body">
+                                <h3>学生人数</h3>
+                                <p>
+                                    <cite th:text="${studentCount}"></cite></p>
+                            </a>
+                        </li>
+                        <li class="layui-col-md6 layui-col-xs6">
+                            <a href="javascript:;" class="x-admin-backlog-body">
+                                <h3>老师人数</h3>
+                                <p>
+                                    <cite th:text="${staffCount}"></cite></p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md6 layui-anim layui-anim-scaleSpring">
+            <div class="layui-card">
+                <div class="layui-card-header">管理员统计</div>
+                <div class="layui-card-body ">
+                    <div id="chartmain" style="width: 400px;height: 450px"></div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md6" style="margin-top: -370px">
+            <div class="layui-card">
+                <div class="layui-card-header">最近登陆管理员</div>
+                <div class="layui-card-body ">
+                    <table class="layui-table" lay-skin="line">
+                        <colgroup>
+                            <col width="200">
+                            <col width="200">
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th>用户名</th>
+                            <th>时间</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>贤心</td>
+                            <td>2016-11-29</td>
+                        </tr>
+                        <tr>
+                            <td>许闲心</td>
+                            <td>2016-11-28</td>
+                        </tr>
+                        <tr>
+                            <td>贤心</td>
+                            <td>2016-11-29</td>
+                        </tr>
+                        <tr>
+                            <td>许闲心</td>
+                            <td>2016-11-28</td>
+                        </tr>
+                        <tr>
+                            <td>贤心</td>
+                            <td>2016-11-29</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        //得到时间并写入div
+        function getDate() {
+            //获取当前时间
+            var date = new Date();
+            //格式化为本地时间格式
+            var date1 = date.toLocaleString();
+            //获取div
+            var div1 = document.getElementById("times");
+            //将时间写入div
+            div1.innerHTML = date1;
+        }
+
+        //使用定时器每秒向span写入当前时间
+        setInterval("getDate()", 1000);
+    </script>
+</div>
+</body>
+</html>

@@ -76,6 +76,12 @@ public class StaffController {
         return "ok";
     }
 
+    /**
+     * 进入首页 且动态的显示左侧菜单
+     * @param model
+     * @param session
+     * @return
+     */
     @RequestMapping("/index")
     public String index(Model model,HttpSession session){
         List<String> stairMenu = new ArrayList<>();//存放一级菜单
@@ -89,6 +95,7 @@ public class StaffController {
             //把1级菜单放入集合中
             stairMenu.add(i,roleAnthorityInfoList.get(i).getAnthortyInfo().getAnthortyName());
             List<RoleAnthorityInfo> secondRoleAnthorityInfoList = roleAnthorityService.getAllWithAnthortyByRoleId(staffInfo.getRoleId(), roleAnthorityInfoList.get(i).getAnthortyId());
+            //把每一个一级菜单拥有的二级子菜单放到map中
             secondMenu.put(i+1,secondRoleAnthorityInfoList);
         }
         System.out.println("二级"+secondMenu);

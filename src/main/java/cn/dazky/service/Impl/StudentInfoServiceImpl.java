@@ -53,4 +53,9 @@ public class StudentInfoServiceImpl implements StudentInfoService {
     public List<StudentInfo> findStudentInfoAll() {
         return studentInfoMapper.selectByExample(null);
     }
+
+    @Override
+    public Integer getStudentCount() {
+        return studentInfoMapper.countByExample(null);
+    }
 }

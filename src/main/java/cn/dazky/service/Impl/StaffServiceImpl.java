@@ -32,4 +32,9 @@ public class StaffServiceImpl implements StaffService {
         }
         return staffInfos.get(0);
     }
+
+    @Override
+    public Integer getStaffCount() {
+        return staffInfoMapper.countByExample(null);
+    }
 }

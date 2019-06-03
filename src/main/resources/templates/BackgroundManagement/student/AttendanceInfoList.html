@@ -44,9 +44,6 @@
             , element = layui.element //元素操作
             , slider = layui.slider //滑块
 
-        //向世界问个好
-        layer.msg('学生考勤');
-
         //监听Tab切换
         element.on('tab(demo)', function (data) {
             layer.tips('切换了 ' + data.index + '：' + this.innerHTML, this, {
@@ -65,7 +62,7 @@
                 [ //表头
                     {type: 'checkbox', fixed: 'left'}
                     , {field: 'attendanceXuenian', title: '学年', fixed: 'left', align: 'center', sort: true, width: 150}
-                    , {field: 'attendanceXueqi', title: '学期', align: 'center', sort: true, width: 150}
+                    , {field: 'attendanceXueqi', title: '学期', align: 'center', sort: true, width: 120}
                     , {field: 'attendanceMonth', title: '月份', align: 'center', sort: true, width: 100}
                     , {field: 'studentId', title: '学生姓名', align: 'center', width: 100}
                     , {field: 'attendanceState', title: '考勤情况', align: 'center', width: 100}
