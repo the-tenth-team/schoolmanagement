@@ -3,32 +3,32 @@ package cn.dazky.pojo;
 import java.util.Date;
 
 /**
- *Bean
+ *班级信息管理Bean
  */
 public class ClassInfo {
-    //ID
+    //班级ID
     private Integer classId;
-    //
+    //班级课表编号
     private Integer syllabusId;
-    //
+    //教室编号
     private Integer classroomId;
-
+    //员工编号
     private Integer staffId;
-
+    //班级名
     private String className;
-
+    //班级人数
     private Integer classNumber;
-
+    //开班日期
     private Date classStartTime;
-
+    //结束日期
     private Date classEndTime;
-
+    //班主任
     private String classIsuesd;
-
+    //班级状态
     private String classState;
-
+    //班级描述
     private String classDesc;
-
+    //专业
     private String classMajor;
 
     public Integer getClassId() {

@@ -1,6 +1,7 @@
 package cn.dazky.contorller;
 
 import cn.dazky.pojo.DisciplineInfo;
+import cn.dazky.pojo.SyllabusInfo;
 import cn.dazky.service.Impl.CourseServiceImpl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -26,13 +27,15 @@ public class CourseController {
     @Autowired
     CourseServiceImpl courseService;
 
+
+
     /**
      * 跳转到课程管理页面
      *
      * @return
      */
     @RequestMapping("/staff/ToDisciplineInfoList")
-    public String ToDisciplineInfo() {
+    public String ToDisciplineInfoList() {
         return "BackgroundManagement/management/AdminCourse";
     }
 
@@ -43,7 +46,7 @@ public class CourseController {
      */
     @RequestMapping("/DisciplineInfoList")
     @ResponseBody
-    public Map<String, Object> DisciplineInfo(HttpServletRequest request) {
+    public Map<String, Object> DisciplineInfoList(HttpServletRequest request) {
         Map<String, Object> map = new HashMap<String, Object>();
 
         PageHelper.startPage(Integer.valueOf(request.getParameter("page")), Integer.valueOf(request.getParameter("limit")));
@@ -56,5 +59,40 @@ public class CourseController {
         map.put("data", pageInfo.getList());    //结果集
         return map;
     }
+
+    /**
+     * 跳转到课程表管理页面
+     *
+     * @return
+     */
+    @RequestMapping("/staff/ToSyllabusInfoList")
+    public String ToSyllabusInfoList() {
+        return "BackgroundManagement/management/Course";
+    }
+
+    /**
+     * 查询所有课程表
+     *
+     * @param request
+     * @return
+     */
+    @RequestMapping("/SyllabusInfoList")
+    @ResponseBody
+    public Map<String, Object> SyllabusInfoList(HttpServletRequest request) {
+        Map<String, Object> map = new HashMap<String, Object>();
+
+        PageHelper.startPage(Integer.valueOf(request.getParameter("page")), Integer.valueOf(request.getParameter("limit")));
+        List<SyllabusInfo> syllabusInfo = courseService.syllabusInfoList();
+        PageInfo<SyllabusInfo> pageInfo = new PageInfo<>(syllabusInfo);
+
+        map.put("code", 0);
+        map.put("msg", "");
+        map.put("count", pageInfo.getTotal());  //总记录数
+        map.put("data", pageInfo.getList());    //结果集
+        return map;
+    }
+
+
+
 
 }

@@ -5,48 +5,51 @@ import org.springframework.format.annotation.DateTimeFormat;
 import java.io.Serializable;
 import java.util.Date;
 
+/**
+ * 教师信息管理Bean
+ */
 public class StaffInfo implements Serializable{
 
     private static final long serialVersionUID = -1703157541292440129L;
-
+    //教师ID
     private Integer staffId;
-
+    //管理员等级
     private Integer roleId;
-
+    //教师名称
     private String staffName;
-
+    //性别
     private String staffSex;
-
+    //年龄
     private Integer staffAge;
-
+    //籍贯
     private String staffNativePlace;
-
+    //身份证信息
     private String staffIdcard;
-
+    //出生日期
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date staffBrithday;
-
+    //办公电话
     private String staffOfficePhone;
-
+    //移动电话
     private String staffMobilePhone;
-
+    //Eamil邮箱
     private String staffEamil;
-
+    //地址
     private String staffAddr;
-
+    //QQ号码
     private String staffQq;
-
+    //入职时间
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date staffEntryTime;
-
+    //学历
     private String staffEductionLevel;
-
+    //标注
     private String staffRemark;
-
+    //类型
     private String staffState;
-
+    //用户名
     private String userNumber;
-
+    //密码
     private String userPassowrd;
 
     public Integer getStaffId() {

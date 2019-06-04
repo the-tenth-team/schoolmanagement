@@ -1,24 +1,28 @@
 package cn.dazky.pojo;
 
+/**
+ * 课表信息Bean
+ */
 public class SyllabusInfo {
+    //课程ID
     private Integer syllabusId;
-
+    //星期一
     private String syllabusYi;
-
+    //星期二
     private String syllabusEr;
-
+    //星期三
     private String syllabusSan;
-
+    //星期四
     private String syllabusSi;
-
+    //星期五
     private String syllabusWu;
-
+    //星期六
     private String syllabusLiu;
-
+    //星期日
     private String syllabusQi;
-
+    //是否可用
     private String isUesd;
-
+    //课程表名称
     private String syllabusName;
 
     public Integer getSyllabusId() {

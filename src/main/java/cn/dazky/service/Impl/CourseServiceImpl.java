@@ -1,7 +1,9 @@
 package cn.dazky.service.Impl;
 
 import cn.dazky.dao.DisciplineInfoMapper;
+import cn.dazky.dao.SyllabusInfoMapper;
 import cn.dazky.pojo.DisciplineInfo;
+import cn.dazky.pojo.SyllabusInfo;
 import cn.dazky.service.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -23,6 +25,9 @@ public class CourseServiceImpl implements CourseService {
     @Resource
     DisciplineInfoMapper disciplineInfoMapper;
 
+    @Resource
+    SyllabusInfoMapper syllabusInfoMapper;
+
     @Autowired
     RedisTemplate<Object, Object> redisTemplate;
 
@@ -41,5 +46,15 @@ public class CourseServiceImpl implements CourseService {
 //        return list;
         return disciplineInfoMapper.selectByExample(null);
     }
+
+    /**
+     *查询所有课程表信息
+     *
+     * @return
+     */
+    public List<SyllabusInfo> syllabusInfoList(){
+        return syllabusInfoMapper.selectByExample(null);
+    }
+
 
 }
