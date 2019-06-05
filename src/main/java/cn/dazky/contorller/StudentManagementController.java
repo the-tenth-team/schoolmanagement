@@ -325,8 +325,8 @@ public class StudentManagementController {
 
         map.put("code", 0);
         map.put("msg", "");
-        map.put("count", pageInfo.getTotal());
-        map.put("data", pageInfo.getList());
+        map.put("count", pageInfo.getTotal());  //总记录数
+        map.put("data", pageInfo.getList());    //结果集
 
         return map;
     }

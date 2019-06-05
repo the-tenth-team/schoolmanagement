@@ -1,6 +1,7 @@
 package cn.dazky.service;
 
 import cn.dazky.pojo.DisciplineInfo;
+import cn.dazky.pojo.SyllabusInfo;
 
 import java.util.List;
 
@@ -18,5 +19,12 @@ public interface CourseService {
      * @return
      */
     public List<DisciplineInfo> selectByExample();
+
+    /**
+     *查询所有课程表信息
+     *
+     * @return
+     */
+    public List<SyllabusInfo> syllabusInfoList();
 
 }

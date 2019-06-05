@@ -7,6 +7,10 @@ import java.util.List;
 import cn.dazky.vo.Condition;
 import org.apache.ibatis.annotations.Param;
 
+/**
+ * 教师信息管理DAO
+ */
+
 public interface StaffInfoMapper {
     int countByExample(StaffInfoExample example);
 

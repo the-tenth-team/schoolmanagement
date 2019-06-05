@@ -3,7 +3,7 @@ package cn.dazky.pojo;
 import java.io.Serializable;
 
 /**
- * 课程信息表
+ * 课程信息Bean
  */
 public class DisciplineInfo implements Serializable {
     //课程信息表ID
