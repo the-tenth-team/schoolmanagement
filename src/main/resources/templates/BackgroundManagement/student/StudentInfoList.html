@@ -67,7 +67,7 @@
                     , {field: 'studentNo', title: '学号', fixed: 'left', align: 'center', width: 200}
                     , {field: 'studentName', title: '姓名', align: 'center', width: 100}
                     , {field: 'studentSex', title: '性别', align: 'center', width: 100}
-                    , {field: 'studentBirthday', title: '出生年月', align: 'center', width: 150}
+                    , {field: 'studentBirthday', title: '出生年月', align: 'center',templet: "<div>{{layui.util.toDateString(d.studentBirthday, 'yyyy-MM-dd')}}</div>", width: 150}
                     , {field: 'studentTellphone', title: '手机号码', align: 'center', width: 100}
                     , {field: 'studentQq', title: 'QQ', align: 'center', width: 100}
                     , {field: 'studentHard', title: '困难生', align: 'center', width: 100}

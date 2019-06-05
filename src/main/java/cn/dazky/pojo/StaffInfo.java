@@ -49,6 +49,20 @@ public class StaffInfo implements Serializable{
 
     private String userPassowrd;
 
+    private RoleInfo roleInfo;
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
+
+    public RoleInfo getRoleInfo() {
+        return roleInfo;
+    }
+
+    public void setRoleInfo(RoleInfo roleInfo) {
+        this.roleInfo = roleInfo;
+    }
+
     public Integer getStaffId() {
         return staffId;
     }
@@ -223,6 +237,7 @@ public class StaffInfo implements Serializable{
                 ", staffState='" + staffState + '\'' +
                 ", userNumber='" + userNumber + '\'' +
                 ", userPassowrd='" + userPassowrd + '\'' +
+                ", roleInfo=" + roleInfo +
                 '}';
     }
 }

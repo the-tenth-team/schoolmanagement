@@ -3,6 +3,8 @@ package cn.dazky.dao;
 import cn.dazky.pojo.StaffInfo;
 import cn.dazky.pojo.StaffInfoExample;
 import java.util.List;
+
+import cn.dazky.vo.Condition;
 import org.apache.ibatis.annotations.Param;
 
 public interface StaffInfoMapper {
@@ -17,6 +19,10 @@ public interface StaffInfoMapper {
     int insertSelective(StaffInfo record);
 
     List<StaffInfo> selectByExample(StaffInfoExample example);
+
+    List<StaffInfo> selectWithRoleByCondition(Condition condition);
+
+    List<StaffInfo> selectWithRole();
 
     StaffInfo selectByPrimaryKey(Integer staffId);
 

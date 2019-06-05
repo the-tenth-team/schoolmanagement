@@ -15,29 +15,40 @@
     <!--[if lt IE 9]>-->
     <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
     <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
-    <script>
-        $.ajax({
-            url:'/getAdmin',
-            success: function (Msg) {
-                $("#staffName").val(Msg.user.staffName);
-                $("#staffSex").val(Msg.user.staffSex);
-                $("#staffIdcard").val(Msg.user.staffIdcard);
-                $("#staffOfficePhone").val(Msg.user.staffOfficePhone);
-                $("#staffMobilePhone").val(Msg.user.staffMobilePhone);
-                $("#staffQq").val(Msg.user.staffQq);
-                $("#staffEductionLevel").val(Msg.user.staffEductionLevel);
-                $("#userNumber").val(Msg.user.userNumber);
-                $("#staffAge").val(Msg.user.staffAge);
-                $("#staffNativePlace").val(Msg.user.staffNativePlace);
-                $("#date").val(Msg.user.staffBrithday);
-                $("#staffEamil").val(Msg.user.staffEamil);
-                $("#staffAddr").val(Msg.user.staffAddr);
-                $("#date1").val(Msg.user.staffEntryTime);
-                $("#roleId").val(Msg.roleInfo.roleName);
-                $("#userPassowrd").val(Msg.user.userPassowrd);
-                $("#staffRemark").html(Msg.user.staffRemark);
-            }
+
+    <script th:inline="javascript">
+        $(function () {
+            var staffId=Number([[${staffId}]]);
+            $.ajax({
+                url: '/staff/getStaffById',
+                data: {
+                    staffId : staffId
+                },
+                success: function (Msg) {
+                    $("#staffId").val(Msg.user.staffId);
+                    $("#roleId").val(Msg.user.roleId);
+                    $("#staffState").val(Msg.user.staffState);
+                    $("#staffName").val(Msg.user.staffName);
+                    $("#staffSex").val(Msg.user.staffSex);
+                    $("#staffIdcard").val(Msg.user.staffIdcard);
+                    $("#staffOfficePhone").val(Msg.user.staffOfficePhone);
+                    $("#staffMobilePhone").val(Msg.user.staffMobilePhone);
+                    $("#staffQq").val(Msg.user.staffQq);
+                    $("#staffEductionLevel").val(Msg.user.staffEductionLevel);
+                    $("#userNumber").val(Msg.user.userNumber);
+                    $("#staffAge").val(Msg.user.staffAge);
+                    $("#staffNativePlace").val(Msg.user.staffNativePlace);
+                    $("#date").val(Msg.user.staffBrithday);
+                    $("#staffEamil").val(Msg.user.staffEamil);
+                    $("#staffAddr").val(Msg.user.staffAddr);
+                    $("#date1").val(Msg.user.staffEntryTime);
+                    $("#staffStateName").val(Msg.roleInfo.roleName);
+                    $("#userPassowrd").val(Msg.user.userPassowrd);
+                    $("#staffRemark").html(Msg.user.staffRemark);
+                }
+            })
         })
+
     </script>
 </head>
 <body>
@@ -47,6 +58,9 @@
             <div class="layui-col-md12 layui-card ">
                 <div class="layui-card-body">
                     <form class="layui-form layui-form-pane">
+                        <input type="text" id="staffId"  name="staffId" hidden="hidden">
+                        <input type="text" id="roleId"  name="roleId" hidden="hidden">
+                        <input type="text" id="staffState"  name="staffState" hidden="hidden">
                         <div class="layui-col-md4 layui-col-md-offset2">
                             <div class="layui-form-item">
                                 <label class="layui-form-label">姓名</label>
@@ -142,7 +156,7 @@
                             <div class="layui-form-item">
                                 <label class="layui-form-label">员工类型</label>
                                 <div class="layui-input-block" style="width: 200px">
-                                    <input type="text" id="roleId" class="layui-input" readonly="readonly">
+                                    <input type="text" id="staffStateName" class="layui-input" readonly="readonly">
                                 </div>
                             </div>
                             <div class="layui-form-item">
@@ -173,6 +187,7 @@
             </div>
 
             <script>
+                var staffId=Number([[${staffId}]]);
                 //Demo
                 layui.use(['form','laydate'], function () {
                     var form = layui.form,
@@ -189,7 +204,7 @@
                     form.on('submit(formDemo)', function (data) {
                         //layer.msg(JSON.stringify(data.field));
                         $.ajax({
-                            url:'/staff/updateStaff',
+                            url:'/staff/updateStaffByStaffId',
                             data: $("form").serialize(),
                             type: 'post',
                             success: function (msg) {

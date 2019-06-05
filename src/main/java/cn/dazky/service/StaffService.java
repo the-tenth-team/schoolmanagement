@@ -1,6 +1,9 @@
 package cn.dazky.service;
 
 import cn.dazky.pojo.StaffInfo;
+import cn.dazky.vo.Condition;
+
+import java.util.List;
 
 /**
  * Description: schoolmanagement
@@ -33,4 +36,17 @@ public interface StaffService {
      * @return
      */
     StaffInfo getStaffById(Integer staffId);
+
+    /**
+     * 获取所有的员工数据（带有角色表）
+     * @return
+     */
+    List<StaffInfo> getStaffAll();
+
+    /**
+     * 根据传入条件参数查询
+     * @param condition
+     * @return
+     */
+    List<StaffInfo> getStaffByCondition(Condition condition);
 }

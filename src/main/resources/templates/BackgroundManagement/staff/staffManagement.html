@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>员工信息</title>
+    <script type="text/javascript" th:src="@{/bootstrap-3.3.7-dist/js/jquery-3.3.1.min.js}"></script>
+    <link rel="stylesheet" href="/static/X-admin/lib/layui/css/layui.css?t=1554901098009"
+          th:href="@{/X-admin/lib/layui/css/layui.css(t=1554901098009)}" media="all">
+    <style>
+        body {
+            margin: 10px;
+        }
+
+        .demo-carousel {
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<form class="layui-form" action="#">
+    <div class="layui-form-item">
+        <label class="layui-form-label">条件:</label>
+        <div class="layui-input-inline">
+            <select  lay-filter="test" id="condition">
+                <option value="0">不限</option>
+                <option value="staff_name">姓名</option>
+                <option value="staff_sex">性别</option>
+                <option value="staff_age">年龄</option>
+                <option value="staff_mobile_phone">移动电话</option>
+                <option value="staff_eamil">电子邮箱</option>
+                <option value="staff_entry_time">入职时间</option>
+                <option value="staff_eduction_level">教育水平</option>
+            </select>
+        </div>
+        <div class="layui-input-inline">
+            <input type="text" id="conditionValue" placeholder="请输入查询内容" autocomplete="off" class="layui-input">
+        </div>
+        <div class="layui-input-inline">
+            <button class="layui-btn layui-btn-radius layui-btn-primary" id="sub_query_form" lay-filter="formDemo" type="button">
+                <i class="layui-icon layui-icon-search"></i>搜索</button>
+        </div>
+    </div>
+</form>
+<table class="layui-hide" id="demo" lay-filter="test"></table>
+
+<script type="text/html" id="barDemo">
+    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">查看</a>
+    <a th:href="@{/getStaffManagementSeeAndUp}" class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+</script>
+
+<script type="text/html" id="headTool">
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">批量删除</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="add">添加</a>
+</script>
+
+<script src="/static/X-admin/lib/layui/layui.js?t=1554901098009"
+        th:src="@{/X-admin/lib/layui/layui.js(t=1554901098009)}"></script>
+<script>
+    layui.config({
+        version: '1554901098009' //为了更新 js 缓存，可忽略
+    });
+
+    layui.use(['laydate', 'laypage', 'layer', 'table', 'carousel', 'upload', 'element', 'slider','form'], function () {
+        var laypage = layui.laypage //分页
+            , layer = layui.layer //弹层
+            , table = layui.table //表格
+            , element = layui.element //元素操作
+            , slider = layui.slider //滑块
+            , form = layui.form //表单
+            , laydate = layui.laydate //日期
+            ;
+
+
+        //监听Tab切换
+        element.on('tab(demo)', function (data) {
+            layer.tips('切换了 ' + data.index + '：' + this.innerHTML, this, {
+                tips: 1
+            });
+        });
+
+        //执行一个 table 实例
+        table.render({
+            elem: '#demo'
+            , url: '/staff/getStaffList' //数据接口
+            , title: '员工信息表'
+            , page: true //开启分页
+            , toolbar: '#headTool' //开启工具栏，此处显示默认图标，可以自定义模板，详见文档
+            , cols: [
+                [ //表头
+                    {type: 'checkbox', fixed: 'left'}
+                    , {field: 'staffId', title: 'id',hide:true}
+                    , {field: 'staffName', title: '姓名', fixed: 'left', align: 'center', width: 150}
+                    , {field: 'staffSex', title: '性别', align: 'center', width: 100}
+                    , {field: 'staffAge', title: '年龄', align: 'center', width: 100}
+                    , {field: 'staffMobilePhone', title: '移动电话', align: 'center', width: 150}
+                    , {field: 'staffEamil', title: '电子邮箱', align: 'center', width: 250}
+                    , {field: 'staffEntryTime', title: '入职时间', align: 'center',templet: "<div>{{layui.util.toDateString(d.staffEntryTime, 'yyyy-MM-dd')}}</div>", width: 150}
+                    , {field: 'staffEductionLevel', title: '教育水平', align: 'center', width: 100}
+                    , {fixed: 'right', title: '操作', align: 'center', toolbar: '#barDemo', width: 165}
+                ]
+            ]
+        });
+
+        //监听头工具栏事件
+        table.on('toolbar(test)', function (obj) {
+            var checkStatus = table.checkStatus(obj.config.id)
+                , data = checkStatus.data; //获取选中的数据
+            switch (obj.event) {
+                case 'add':
+                    layer.open({
+                        //layer提供了5种层类型。可传入的值有：0（信息框，默认）1（页面层）2（iframe层）3（加载层）4（tips层）
+                        type: 2,
+                        title: "员工添加",
+                        area: ['1100px', '550px'],
+                        offset: ['50px', '100px'],
+                        content: "",
+                        success: function (layero, index) {
+
+                        }
+                    })
+                    break;
+                case 'del':
+                    if (data.length === 0) {
+                        layer.msg('请选择一行');
+                    } else {
+                        layer.msg('删除');
+                    }
+                    break;
+            }
+            ;
+        });
+
+        //监听行工具事件
+        table.on('tool(test)', function (obj) { //注：tool 是工具条事件名，test 是 table 原始容器的属性 lay-filter="对应的值"
+            var data = obj.data //获得当前行数据
+                , layEvent = obj.event; //获得 lay-event 对应的值
+            var staffId = data.staffId;
+            if (layEvent === 'detail') {
+                layer.open({
+                    //layer提供了5种层类型。可传入的值有：0（信息框，默认）1（页面层）2（iframe层）3（加载层）4（tips层）
+                    type: 2,
+                    title: "员工显示/编辑",
+                    area: ['1100px', '550px'],
+                    offset: ['50px', '100px'],
+                    content: "/staff/getStaffManagementSeeAndUp?staffId="+staffId,
+                    success: function (layero, index) {
+
+                    }
+                })
+            } else if (layEvent === 'del') {
+                layer.confirm('真的删除行么', function (index) {
+                    obj.del(); //删除对应行（tr）的DOM结构
+                    layer.close(index);
+                    //向服务端发送删除指令
+                });
+            } else if (layEvent === 'edit') {
+                layer.msg('编辑操作');
+            }
+        });
+
+        //监听提交(查询)
+        $('#sub_query_form').on('click',function () {
+            var table = layui.table;
+            var condition = $('#condition').val();//
+            var conditionValue = $('#conditionValue').val();
+            table.reload('demo', {
+                url: 'getStaffByCondition',
+                page:{
+                    curr:1  //从第一页开始
+                },
+                method:'post',
+                where:{
+                    condition : condition,
+                    conditionValue : conditionValue
+                },
+                done:function (res) {
+
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>

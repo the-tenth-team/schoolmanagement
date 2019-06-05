@@ -78,17 +78,12 @@ public class LoginController {
      */
     @RequestMapping("/getPersonal")
     public String getPersonal(HttpSession session,Model model){
-        //StaffInfo staffInfo = (StaffInfo) session.getAttribute("user");
-        //StaffInfo user = staffService.getStaffById(staffInfo.getStaffId());
-       // RoleInfo roleInfo = roleInfoSerivce.getRoleById(user.getRoleId());
-       // model.addAttribute("user",user);
-       // model.addAttribute("roleInfo",roleInfo);
         return "BackgroundManagement/personal";
     }
 
     @ResponseBody
-    @RequestMapping("/getA")
-    public Map<String, Object> getA(HttpSession session){
+    @RequestMapping("/getAdmin")
+    public Map<String, Object> getAdmin(HttpSession session){
         StaffInfo staffInfo = (StaffInfo) session.getAttribute("user");
         StaffInfo user = staffService.getStaffById(staffInfo.getStaffId());
         RoleInfo roleInfo = roleInfoSerivce.getRoleById(user.getRoleId());
